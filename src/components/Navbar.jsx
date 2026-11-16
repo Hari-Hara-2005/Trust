@@ -66,36 +66,36 @@ export default function Navbar({
       />
 
       {/* Top Notification & Live Activity Bar */}
-      <div className="bg-[#141042] text-white text-xs py-2 px-4 border-b border-indigo-900/60 transition-colors z-50">
-        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+      <div className="bg-[#141042] text-white py-2.5 px-4 sm:px-6 border-b border-indigo-900/60 transition-colors z-50">
+        <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-3">
           
           {/* Left: Origin & Cycling Live Activity */}
-          <div className="flex items-center gap-2.5 overflow-hidden">
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 shrink-0">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
+          <div className="flex items-center gap-3 overflow-hidden">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 shrink-0">
+              <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
               {lang === 'en' ? 'Est. 2010 • Chennai' : '2010 முதல் • சென்னை'}
             </span>
 
             {/* Live Ticker */}
-            <div className="hidden md:flex items-center gap-1.5 text-slate-300 text-[11px] transition-all duration-500 truncate max-w-lg">
-              <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+            <div className="hidden md:flex items-center gap-2 text-slate-200 text-xs sm:text-sm font-medium transition-all duration-500 truncate max-w-xl">
+              <Sparkles className="w-4 h-4 text-amber-400 shrink-0" />
               <span className="truncate">{liveUpdates[updateIndex]}</span>
             </div>
           </div>
 
           {/* Right: Quick Rescue & Language Switch */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-3.5 shrink-0">
             {/* Surplus Food Rescue Button */}
             <button 
               onClick={onOpenFoodModal}
-              className="flex items-center gap-1.5 text-amber-300 hover:text-amber-200 transition-colors cursor-pointer group text-[11px] sm:text-xs"
+              className="flex items-center gap-1.5 text-amber-300 hover:text-amber-200 transition-colors cursor-pointer group text-xs sm:text-sm font-semibold"
               title="Surplus Food Alert Chennai"
             >
-              <span className="relative flex h-2 w-2">
+              <span className="relative flex h-2.5 w-2.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-amber-500"></span>
               </span>
-              <Utensils className="w-3.5 h-3.5 text-amber-400 group-hover:scale-110 transition-transform" />
+              <Utensils className="w-4 h-4 text-amber-400 group-hover:scale-110 transition-transform" />
               <span>{lang === 'en' ? 'Food Rescue' : 'உணவு மீட்பு'}</span>
             </button>
 
@@ -104,10 +104,10 @@ export default function Navbar({
             {/* Blood Support Button */}
             <button 
               onClick={onOpenBloodModal}
-              className="flex items-center gap-1.5 text-rose-300 hover:text-rose-200 transition-colors cursor-pointer group text-[11px] sm:text-xs"
+              className="flex items-center gap-1.5 text-rose-300 hover:text-rose-200 transition-colors cursor-pointer group text-xs sm:text-sm font-semibold"
               title="Emergency Blood Donor Request"
             >
-              <Droplet className="w-3.5 h-3.5 text-rose-400 group-hover:scale-110 transition-transform" />
+              <Droplet className="w-4 h-4 text-rose-400 group-hover:scale-110 transition-transform" />
               <span>{lang === 'en' ? 'Blood Support' : 'அவசர குருதிக்கொடை'}</span>
             </button>
 
@@ -116,10 +116,10 @@ export default function Navbar({
             {/* Language Switcher */}
             <button
               onClick={() => setLang(lang === 'en' ? 'ta' : 'en')}
-              className="flex items-center gap-1 bg-white/10 hover:bg-white/20 px-2.5 py-0.5 rounded text-xs font-semibold text-white transition-all cursor-pointer border border-white/15"
+              className="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 px-3 py-1 rounded-lg text-xs sm:text-sm font-bold text-white transition-all cursor-pointer border border-white/20"
               aria-label="Toggle Language"
             >
-              <Globe className="w-3.5 h-3.5 text-amber-400" />
+              <Globe className="w-4 h-4 text-amber-400" />
               <span>{lang === 'en' ? 'தமிழ்' : 'English'}</span>
             </button>
           </div>
@@ -129,15 +129,15 @@ export default function Navbar({
       {/* Main Sticky Navigation */}
       <header className={`sticky top-0 z-40 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80 py-2.5' 
-          : 'bg-white py-3 border-b border-slate-100'
+          ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80 py-3' 
+          : 'bg-white py-3.5 border-b border-slate-100'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
           {/* Logo & Brand Identity */}
-          <a href="#" className="flex items-center gap-3 group">
+          <a href="#" className="flex items-center gap-3.5 group">
             <div className="relative">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full p-0.5 bg-gradient-to-tr from-[#1d195c] via-[#ea580c] to-[#d91b5c] shadow-md group-hover:shadow-lg transition-all flex items-center justify-center">
+              <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-full p-0.5 bg-gradient-to-tr from-[#1d195c] via-[#ea580c] to-[#d91b5c] shadow-md group-hover:shadow-lg transition-all flex items-center justify-center">
                 <img 
                   src="/sevai-logo.png" 
                   alt="Sevai Kalanjiyam Logo" 
@@ -147,16 +147,16 @@ export default function Navbar({
             </div>
             
             <div className="flex flex-col">
-              <div className="flex items-baseline gap-1.5">
-                <span className="text-lg sm:text-xl font-extrabold tracking-tight text-[#18144b] font-display">
+              <div className="flex items-baseline gap-2">
+                <span className="text-xl sm:text-2xl font-black tracking-tight text-[#18144b] font-display">
                   SEVAI KALANJIYAM
                 </span>
               </div>
-              <div className="flex items-center gap-1.5">
-                <span className="text-xs sm:text-sm font-bold text-[#ea580c] tamil-title">
+              <div className="flex items-center gap-2">
+                <span className="text-sm sm:text-base font-bold text-[#ea580c] tamil-title">
                   சேவை களஞ்சியம்
                 </span>
-                <span className="text-[10px] text-slate-400 hidden md:inline">• Social Welfare Trust</span>
+                <span className="text-xs text-slate-500 hidden md:inline font-medium">• Social Welfare Trust</span>
               </div>
             </div>
           </a>
@@ -167,7 +167,7 @@ export default function Navbar({
               <a
                 key={link.name}
                 href={link.href}
-                className="px-3 py-2 text-sm font-semibold text-slate-700 hover:text-[#18144b] hover:bg-slate-50 rounded-lg transition-colors"
+                className="px-3.5 py-2 text-sm xl:text-base font-bold text-slate-700 hover:text-[#18144b] hover:bg-slate-100/80 rounded-xl transition-colors"
               >
                 {link.name}
               </a>
@@ -175,10 +175,10 @@ export default function Navbar({
           </nav>
 
           {/* Action CTAs */}
-          <div className="hidden sm:flex items-center gap-2.5">
+          <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={onOpenVolunteerModal}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs md:text-sm font-bold text-[#18144b] bg-slate-100 hover:bg-slate-200 rounded-xl transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 text-sm md:text-base font-bold text-[#18144b] bg-slate-100 hover:bg-slate-200 rounded-xl transition-all cursor-pointer"
             >
               <Users className="w-4 h-4 text-[#ea580c]" />
               <span>{lang === 'en' ? 'Volunteer' : 'இணையுங்கள்'}</span>
@@ -186,7 +186,7 @@ export default function Navbar({
 
             <button
               onClick={onOpenSupportModal}
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs md:text-sm font-bold text-white bg-gradient-to-r from-[#ea580c] to-[#d91b5c] hover:from-[#c2410c] hover:to-[#be123c] rounded-xl shadow-xs hover:shadow transition-all cursor-pointer transform hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm md:text-base font-bold text-white bg-gradient-to-r from-[#ea580c] to-[#d91b5c] hover:from-[#c2410c] hover:to-[#be123c] rounded-xl shadow-xs hover:shadow transition-all cursor-pointer transform hover:-translate-y-0.5"
             >
               <Heart className="w-4 h-4 fill-white" />
               <span>{lang === 'en' ? 'Support Cause' : 'ஆதரவு அளிக்க'}</span>
@@ -197,14 +197,14 @@ export default function Navbar({
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={onOpenSupportModal}
-              className="sm:hidden px-2.5 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-[#ea580c] to-[#d91b5c] rounded-lg shadow-xs cursor-pointer"
+              className="sm:hidden px-3 py-1.5 text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-[#ea580c] to-[#d91b5c] rounded-lg shadow-xs cursor-pointer"
             >
               {lang === 'en' ? 'Support' : 'ஆதரவு'}
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-slate-700 hover:text-[#18144b] hover:bg-slate-100 rounded-lg transition-colors cursor-pointer"
+              className="p-2 text-slate-700 hover:text-[#18144b] hover:bg-slate-100 rounded-xl transition-colors cursor-pointer"
               aria-label="Open mobile menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -219,30 +219,30 @@ export default function Navbar({
           <div className="w-4/5 max-w-sm bg-white h-full shadow-2xl flex flex-col p-6 overflow-y-auto">
             <div className="flex items-center justify-between pb-4 border-b border-slate-100">
               <div className="flex items-center gap-2.5">
-                <img src="/sevai-logo.png" alt="Logo" className="w-10 h-10 object-contain rounded-full" />
+                <img src="/sevai-logo.png" alt="Logo" className="w-12 h-12 object-contain rounded-full" />
                 <div>
-                  <h3 className="font-bold text-sm text-[#18144b]">SEVAI KALANJIYAM</h3>
-                  <p className="text-xs text-[#ea580c] font-semibold">சேவை களஞ்சியம்</p>
+                  <h3 className="font-extrabold text-base text-[#18144b]">SEVAI KALANJIYAM</h3>
+                  <p className="text-sm text-[#ea580c] font-bold">சேவை களஞ்சியம்</p>
                 </div>
               </div>
               <button 
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-1.5 text-slate-400 hover:text-slate-700 rounded-md"
+                className="p-2 text-slate-400 hover:text-slate-700 rounded-md"
               >
                 <X className="w-6 h-6" />
               </button>
             </div>
 
             {/* Language Switch in Mobile Menu */}
-            <div className="my-4 p-3 bg-slate-50 rounded-xl flex items-center justify-between">
-              <span className="text-xs font-medium text-slate-600">
+            <div className="my-4 p-3.5 bg-slate-50 rounded-2xl flex items-center justify-between">
+              <span className="text-sm font-semibold text-slate-700">
                 {lang === 'en' ? 'Display Language' : 'மொழி தேர்வு'}
               </span>
               <button
                 onClick={() => setLang(lang === 'en' ? 'ta' : 'en')}
-                className="flex items-center gap-1.5 px-3 py-1 bg-white border border-slate-200 rounded-lg text-xs font-bold text-[#18144b]"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 rounded-xl text-xs sm:text-sm font-bold text-[#18144b]"
               >
-                <Globe className="w-3.5 h-3.5 text-[#ea580c]" />
+                <Globe className="w-4 h-4 text-[#ea580c]" />
                 {lang === 'en' ? 'தமிழ் (Tamil)' : 'English'}
               </button>
             </div>
@@ -254,31 +254,31 @@ export default function Navbar({
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="flex items-center justify-between px-3 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-50 rounded-lg transition-colors"
+                  className="flex items-center justify-between px-3.5 py-3 text-base font-bold text-slate-800 hover:bg-slate-50 rounded-xl transition-colors"
                 >
                   <span>{link.name}</span>
-                  <ChevronRight className="w-4 h-4 text-slate-400" />
+                  <ChevronRight className="w-5 h-5 text-slate-400" />
                 </a>
               ))}
             </nav>
 
             {/* Quick emergency action cards */}
-            <div className="mt-6 space-y-2.5 pt-4 border-t border-slate-100">
+            <div className="mt-6 space-y-3 pt-4 border-t border-slate-100">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenFoodModal();
                 }}
-                className="w-full flex items-center gap-3 p-3 text-left bg-amber-50 hover:bg-amber-100/80 border border-amber-200/80 rounded-xl transition-colors cursor-pointer"
+                className="w-full flex items-center gap-3 p-3.5 text-left bg-amber-50 hover:bg-amber-100/80 border border-amber-200/80 rounded-2xl transition-colors cursor-pointer"
               >
-                <div className="p-2 bg-amber-500 text-white rounded-lg">
-                  <Utensils className="w-4 h-4" />
+                <div className="p-2.5 bg-amber-500 text-white rounded-xl">
+                  <Utensils className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-amber-950">
+                  <div className="text-sm font-bold text-amber-950">
                     {lang === 'en' ? 'Surplus Food Rescue' : 'உபரி உணவு மீட்பு'}
                   </div>
-                  <div className="text-[11px] text-amber-700">
+                  <div className="text-xs text-amber-800">
                     {lang === 'en' ? 'Prevent food waste in Chennai' : 'திருமண உணவு வீணாகாமல் காப்போம்'}
                   </div>
                 </div>
@@ -289,16 +289,16 @@ export default function Navbar({
                   setMobileMenuOpen(false);
                   onOpenBloodModal();
                 }}
-                className="w-full flex items-center gap-3 p-3 text-left bg-rose-50 hover:bg-rose-100/80 border border-rose-200/80 rounded-xl transition-colors cursor-pointer"
+                className="w-full flex items-center gap-3 p-3.5 text-left bg-rose-50 hover:bg-rose-100/80 border border-rose-200/80 rounded-2xl transition-colors cursor-pointer"
               >
-                <div className="p-2 bg-rose-500 text-white rounded-lg">
-                  <Droplet className="w-4 h-4" />
+                <div className="p-2.5 bg-rose-500 text-white rounded-xl">
+                  <Droplet className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-rose-950">
+                  <div className="text-sm font-bold text-rose-950">
                     {lang === 'en' ? 'Emergency Blood Request' : 'அவசர குருதிக்கொடை'}
                   </div>
-                  <div className="text-[11px] text-rose-700">
+                  <div className="text-xs text-rose-800">
                     {lang === 'en' ? '24/7 volunteer donor response' : 'சென்னை மருத்துவமனை அவசர உதவி'}
                   </div>
                 </div>
@@ -306,13 +306,13 @@ export default function Navbar({
             </div>
 
             {/* Bottom Actions */}
-            <div className="mt-auto pt-6 space-y-2">
+            <div className="mt-auto pt-6 space-y-2.5">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenVolunteerModal();
                 }}
-                className="w-full py-2.5 text-sm font-bold text-[#18144b] bg-slate-100 hover:bg-slate-200 rounded-xl text-center cursor-pointer"
+                className="w-full py-3 text-base font-bold text-[#18144b] bg-slate-100 hover:bg-slate-200 rounded-xl text-center cursor-pointer"
               >
                 {lang === 'en' ? 'Join as Youth Volunteer' : 'தன்னார்வலராக இணைய'}
               </button>
@@ -322,7 +322,7 @@ export default function Navbar({
                   setMobileMenuOpen(false);
                   onOpenSupportModal();
                 }}
-                className="w-full py-2.5 text-sm font-bold text-white bg-gradient-to-r from-[#ea580c] to-[#d91b5c] rounded-xl text-center shadow-md cursor-pointer"
+                className="w-full py-3 text-base font-bold text-white bg-gradient-to-r from-[#ea580c] to-[#d91b5c] rounded-xl text-center shadow-md cursor-pointer"
               >
                 {lang === 'en' ? 'Support Our Initiatives' : 'ஆதரவு அளிக்க'}
               </button>
