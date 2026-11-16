@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import StatsCounter from './components/StatsCounter';
 import AboutSection from './components/AboutSection';
 import WingsShowcase from './components/WingsShowcase';
+import ImpactStoriesSection from './components/ImpactStoriesSection';
 import TransparencySection from './components/TransparencySection';
 import TimelineSection from './components/TimelineSection';
 import FAQSection from './components/FAQSection';
@@ -23,6 +27,21 @@ export default function App() {
   const [isBloodModalOpen, setIsBloodModalOpen] = useState(false);
   const [isVolunteerModalOpen, setIsVolunteerModalOpen] = useState(false);
   const [isSupportModalOpen, setIsSupportModalOpen] = useState(false);
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 50,
+      delay: 50,
+    });
+  }, []);
+
+  useEffect(() => {
+    // Refresh AOS whenever language or active wing updates to keep animations in sync
+    AOS.refresh();
+  }, [lang, activeWingId]);
 
   const handleSelectWing = (wingId) => {
     setActiveWingId(wingId);
@@ -75,6 +94,13 @@ export default function App() {
           onOpenBloodModal={() => setIsBloodModalOpen(true)}
           onOpenSupportModal={() => setIsSupportModalOpen(true)}
           onOpenVolunteerModal={() => setIsVolunteerModalOpen(true)}
+        />
+
+        {/* Real Grassroots Impact Stories */}
+        <ImpactStoriesSection
+          lang={lang}
+          onSelectWing={handleSelectWing}
+          onOpenSupportModal={() => setIsSupportModalOpen(true)}
         />
 
         {/* Radical Transparency & Zero Overhead Guarantee */}
@@ -130,4 +156,3 @@ export default function App() {
     </div>
   );
 }
-

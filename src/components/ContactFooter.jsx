@@ -40,14 +40,18 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
   };
 
   return (
-    <footer id="contact" className="bg-[#120f38] text-white pt-16 pb-10 border-t border-indigo-950 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer id="contact" className="bg-[#100c31] text-white pt-16 pb-10 border-t border-indigo-950 relative overflow-hidden">
+      
+      {/* Decorative ambient spots */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#ea580c]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         {/* Contact Form & Trust Info Grid */}
         <div className="grid lg:grid-cols-12 gap-12 pb-16 border-b border-indigo-900/60">
           
-          {/* Left Column: Trust Info & Hubs */}
-          <div className="lg:col-span-6 space-y-6">
+          {/* Left Column: Trust Info & Hubs with AOS */}
+          <div className="lg:col-span-6 space-y-6" data-aos="fade-right">
             
             <div className="flex items-center gap-3.5">
               <div className="w-14 h-14 rounded-full bg-white p-1 shadow-lg shrink-0">
@@ -78,7 +82,7 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
 
             {/* Direct Contact Cards */}
             <div className="space-y-3 text-xs sm:text-sm">
-              <div className="flex items-start gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+              <div className="flex items-start gap-3 p-3.5 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
                 <MapPin className="w-5 h-5 text-[#ea580c] shrink-0 mt-0.5" />
                 <div>
                   <strong className="block text-white font-semibold">Headquarters & Volunteer Operations Hub:</strong>
@@ -89,7 +93,7 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
               </div>
 
               <div className="grid sm:grid-cols-2 gap-3">
-                <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
                   <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
                   <div>
                     <span className="text-[11px] text-slate-400 block">Surplus Food Alert Line:</span>
@@ -97,7 +101,7 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
                   <Phone className="w-4 h-4 text-rose-400 shrink-0" />
                   <div>
                     <span className="text-[11px] text-slate-400 block">Blood Helpline (24/7):</span>
@@ -106,7 +110,7 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
                 </div>
               </div>
 
-              <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+              <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
                 <Mail className="w-4 h-4 text-amber-400 shrink-0" />
                 <div>
                   <span className="text-[11px] text-slate-400 block">Email for Partnerships & Volunteering:</span>
@@ -115,15 +119,15 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
               </div>
             </div>
 
-            {/* Quote badge */}
-            <div className="p-3.5 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-200 text-xs italic font-medium tamil-title">
+            {/* Tamil Quote badge */}
+            <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/20 text-amber-200 text-xs italic font-medium tamil-title leading-relaxed">
               "வாடிய பயிரைக் கண்டபோதெல்லாம் வாடினேன் • பசிப்பிணி தீர்த்தல் தலையாய கடமை"
             </div>
 
           </div>
 
-          {/* Right Column: Interactive Message Box */}
-          <div className="lg:col-span-6 bg-white/5 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-white/10">
+          {/* Right Column: Interactive Message Box with AOS */}
+          <div className="lg:col-span-6 bg-white/5 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-white/10" data-aos="fade-left">
             <h4 className="text-lg font-bold text-white mb-1 flex items-center gap-2">
               <Send className="w-4 h-4 text-[#ea580c]" />
               <span>{lang === 'en' ? 'Send a Message to Youth Coordinators' : 'எங்களை தொடர்பு கொள்ள'}</span>
@@ -185,7 +189,7 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
                   <select 
                     value={formData.subject}
                     onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    className="w-full text-xs p-2.5 rounded-xl bg-[#1d195c] border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-[#ea580c]"
+                    className="w-full text-xs p-2.5 rounded-xl bg-[#141042] border border-white/20 text-white focus:outline-none focus:ring-2 focus:ring-[#ea580c]"
                   >
                     <option>Volunteer with a Wing</option>
                     <option>Sponsor Study Kits (Kalvi Kalanjiyam)</option>
@@ -211,7 +215,7 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
 
                 <button
                   type="submit"
-                  className="w-full py-3 bg-gradient-to-r from-[#ea580c] to-[#d91b5c] hover:from-[#c2410c] hover:to-[#be123c] text-white font-bold text-xs rounded-xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-2"
+                  className="w-full py-3 bg-gradient-to-r from-[#ea580c] to-[#d91b5c] hover:from-[#c2410c] hover:to-[#be123c] text-white font-bold text-xs rounded-xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 transform hover:-translate-y-0.5"
                 >
                   <Send className="w-3.5 h-3.5" />
                   <span>Send Message to Team</span>
@@ -276,7 +280,7 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer text-xs"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer text-xs"
           >
             <span>Back to top</span>
             <ArrowUp className="w-3.5 h-3.5" />
@@ -287,4 +291,3 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
     </footer>
   );
 }
-

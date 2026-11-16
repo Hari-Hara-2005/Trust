@@ -9,8 +9,10 @@ import {
   Droplet, 
   Users, 
   ShieldCheck,
-  ChevronRight
+  ChevronRight,
+  Sparkles
 } from 'lucide-react';
+import { liveUpdates } from '../data/trustData';
 
 export default function Navbar({ 
   lang, 
@@ -22,13 +24,28 @@ export default function Navbar({
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [updateIndex, setUpdateIndex] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+      const totalScroll = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const currentScroll = window.scrollY;
+      if (totalScroll > 0) {
+        setScrollProgress((currentScroll / totalScroll) * 100);
+      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Cycle live field updates every 5 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setUpdateIndex(prev => (prev + 1) % liveUpdates.length);
+    }, 5000);
+    return () => clearInterval(timer);
   }, []);
 
   const navLinks = [
@@ -42,22 +59,33 @@ export default function Navbar({
 
   return (
     <>
-      {/* Top Notification Bar */}
-      <div className="bg-[#18144b] text-white text-xs py-2 px-4 border-b border-indigo-900/60 transition-colors">
+      {/* Top Scroll Progress Indicator */}
+      <div 
+        id="scroll-progress" 
+        style={{ width: `${scrollProgress}%` }}
+      />
+
+      {/* Top Notification & Live Activity Bar */}
+      <div className="bg-[#141042] text-white text-xs py-2 px-4 border-b border-indigo-900/60 transition-colors z-50">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-amber-500/20 text-amber-300 border border-amber-500/30">
+          
+          {/* Left: Origin & Cycling Live Activity */}
+          <div className="flex items-center gap-2.5 overflow-hidden">
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-500/30 shrink-0">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse"></span>
               {lang === 'en' ? 'Est. 2010 • Chennai' : '2010 முதல் • சென்னை'}
             </span>
-            <span className="hidden sm:inline text-slate-300">
-              {lang === 'en' 
-                ? '100% Volunteer-Led • Zero Administrative Overhead' 
-                : '100% இளைஞர் தன்னார்வம் • பூஜ்ஜிய நிர்வாகச் செலவு'}
-            </span>
+
+            {/* Live Ticker */}
+            <div className="hidden md:flex items-center gap-1.5 text-slate-300 text-[11px] transition-all duration-500 truncate max-w-lg">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+              <span className="truncate">{liveUpdates[updateIndex]}</span>
+            </div>
           </div>
 
-          <div className="flex items-center gap-3">
-            {/* Quick emergency hotlines */}
+          {/* Right: Quick Rescue & Language Switch */}
+          <div className="flex items-center gap-3 shrink-0">
+            {/* Surplus Food Rescue Button */}
             <button 
               onClick={onOpenFoodModal}
               className="flex items-center gap-1.5 text-amber-300 hover:text-amber-200 transition-colors cursor-pointer group text-[11px] sm:text-xs"
@@ -68,26 +96,27 @@ export default function Navbar({
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
               </span>
               <Utensils className="w-3.5 h-3.5 text-amber-400 group-hover:scale-110 transition-transform" />
-              <span>{lang === 'en' ? 'Surplus Food Rescue' : 'உபரி உணவு மீட்பு'}</span>
+              <span>{lang === 'en' ? 'Food Rescue' : 'உணவு மீட்பு'}</span>
             </button>
 
-            <span className="text-indigo-700">|</span>
+            <span className="text-indigo-800">|</span>
 
+            {/* Blood Support Button */}
             <button 
               onClick={onOpenBloodModal}
               className="flex items-center gap-1.5 text-rose-300 hover:text-rose-200 transition-colors cursor-pointer group text-[11px] sm:text-xs"
               title="Emergency Blood Donor Request"
             >
               <Droplet className="w-3.5 h-3.5 text-rose-400 group-hover:scale-110 transition-transform" />
-              <span>{lang === 'en' ? 'Blood Support' : 'அவசர ரத்ததானம்'}</span>
+              <span>{lang === 'en' ? 'Blood Support' : 'அவசர குருதிக்கொடை'}</span>
             </button>
 
-            <span className="text-indigo-700">|</span>
+            <span className="text-indigo-800">|</span>
 
             {/* Language Switcher */}
             <button
               onClick={() => setLang(lang === 'en' ? 'ta' : 'en')}
-              className="flex items-center gap-1 bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded text-xs font-medium text-white transition-all cursor-pointer border border-white/15"
+              className="flex items-center gap-1 bg-white/10 hover:bg-white/20 px-2.5 py-0.5 rounded text-xs font-semibold text-white transition-all cursor-pointer border border-white/15"
               aria-label="Toggle Language"
             >
               <Globe className="w-3.5 h-3.5 text-amber-400" />
@@ -100,8 +129,8 @@ export default function Navbar({
       {/* Main Sticky Navigation */}
       <header className={`sticky top-0 z-40 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-100 py-2.5' 
-          : 'bg-white py-3.5 border-b border-slate-100'
+          ? 'bg-white/95 backdrop-blur-md shadow-md border-b border-slate-200/80 py-2.5' 
+          : 'bg-white py-3 border-b border-slate-100'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
@@ -112,7 +141,7 @@ export default function Navbar({
                 <img 
                   src="/sevai-logo.png" 
                   alt="Sevai Kalanjiyam Logo" 
-                  className="w-full h-full object-contain rounded-full bg-white p-0.5"
+                  className="w-full h-full object-contain rounded-full bg-white p-0.5 group-hover:scale-105 transition-transform"
                 />
               </div>
             </div>
@@ -149,7 +178,7 @@ export default function Navbar({
           <div className="hidden sm:flex items-center gap-2.5">
             <button
               onClick={onOpenVolunteerModal}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs md:text-sm font-bold text-[#18144b] bg-slate-100 hover:bg-slate-200 rounded-lg transition-all cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs md:text-sm font-bold text-[#18144b] bg-slate-100 hover:bg-slate-200 rounded-xl transition-all cursor-pointer"
             >
               <Users className="w-4 h-4 text-[#ea580c]" />
               <span>{lang === 'en' ? 'Volunteer' : 'இணையுங்கள்'}</span>
@@ -157,7 +186,7 @@ export default function Navbar({
 
             <button
               onClick={onOpenSupportModal}
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs md:text-sm font-bold text-white bg-gradient-to-r from-[#ea580c] to-[#d91b5c] hover:from-[#c2410c] hover:to-[#be123c] rounded-lg shadow-sm hover:shadow transition-all cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs md:text-sm font-bold text-white bg-gradient-to-r from-[#ea580c] to-[#d91b5c] hover:from-[#c2410c] hover:to-[#be123c] rounded-xl shadow-xs hover:shadow transition-all cursor-pointer transform hover:-translate-y-0.5"
             >
               <Heart className="w-4 h-4 fill-white" />
               <span>{lang === 'en' ? 'Support Cause' : 'ஆதரவு அளிக்க'}</span>
@@ -168,7 +197,7 @@ export default function Navbar({
           <div className="flex lg:hidden items-center gap-2">
             <button
               onClick={onOpenSupportModal}
-              className="sm:hidden px-2.5 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-[#ea580c] to-[#d91b5c] rounded-md shadow-xs cursor-pointer"
+              className="sm:hidden px-2.5 py-1.5 text-xs font-bold text-white bg-gradient-to-r from-[#ea580c] to-[#d91b5c] rounded-lg shadow-xs cursor-pointer"
             >
               {lang === 'en' ? 'Support' : 'ஆதரவு'}
             </button>
@@ -283,7 +312,7 @@ export default function Navbar({
                   setMobileMenuOpen(false);
                   onOpenVolunteerModal();
                 }}
-                className="w-full py-2.5 text-sm font-bold text-[#18144b] bg-slate-100 hover:bg-slate-200 rounded-lg text-center"
+                className="w-full py-2.5 text-sm font-bold text-[#18144b] bg-slate-100 hover:bg-slate-200 rounded-xl text-center cursor-pointer"
               >
                 {lang === 'en' ? 'Join as Youth Volunteer' : 'தன்னார்வலராக இணைய'}
               </button>
@@ -293,7 +322,7 @@ export default function Navbar({
                   setMobileMenuOpen(false);
                   onOpenSupportModal();
                 }}
-                className="w-full py-2.5 text-sm font-bold text-white bg-gradient-to-r from-[#ea580c] to-[#d91b5c] rounded-lg text-center shadow-md"
+                className="w-full py-2.5 text-sm font-bold text-white bg-gradient-to-r from-[#ea580c] to-[#d91b5c] rounded-xl text-center shadow-md cursor-pointer"
               >
                 {lang === 'en' ? 'Support Our Initiatives' : 'ஆதரவு அளிக்க'}
               </button>
@@ -304,4 +333,3 @@ export default function Navbar({
     </>
   );
 }
-

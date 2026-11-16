@@ -11,7 +11,8 @@ import {
   Stethoscope,
   MapPin,
   Calendar,
-  CheckCircle2
+  CheckCircle2,
+  Users
 } from 'lucide-react';
 import { trustInfo } from '../data/trustData';
 
@@ -30,29 +31,33 @@ export default function Hero({
   ];
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-[#18144b] via-[#211663] to-[#161245] text-white pt-12 pb-20 lg:pt-16 lg:pb-28">
-      {/* Decorative Background Elements */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full overflow-hidden pointer-events-none opacity-20">
-        <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-[#ea580c] blur-3xl"></div>
-        <div className="absolute top-60 -left-40 w-96 h-96 rounded-full bg-[#d91b5c] blur-3xl"></div>
-        <div className="absolute bottom-10 right-20 w-80 h-80 rounded-full bg-[#059669] blur-3xl"></div>
+    <div className="relative overflow-hidden bg-gradient-to-b from-[#141042] via-[#211663] to-[#141042] text-white pt-10 pb-20 lg:pt-14 lg:pb-28">
+      {/* Decorative Background Glows */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full overflow-hidden pointer-events-none opacity-25">
+        <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#ea580c] blur-3xl animate-pulse-glow"></div>
+        <div className="absolute top-64 -left-32 w-96 h-96 rounded-full bg-[#d91b5c] blur-3xl animate-pulse-glow"></div>
+        <div className="absolute bottom-10 right-24 w-80 h-80 rounded-full bg-[#059669] blur-3xl"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Top Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-6 sm:mb-8">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/10 backdrop-blur-md border border-white/15 text-amber-300">
+        {/* Top Badges with AOS */}
+        <div 
+          data-aos="fade-down"
+          data-aos-duration="600"
+          className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-6 sm:mb-8"
+        >
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/10 backdrop-blur-md border border-white/15 text-amber-300 shadow-xs">
             <MapPin className="w-3.5 h-3.5 text-[#ea580c]" />
             <span>Chennai, Tamil Nadu</span>
           </div>
 
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 text-amber-200">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 text-amber-200 shadow-xs">
             <Calendar className="w-3.5 h-3.5 text-amber-400" />
             <span>{lang === 'en' ? 'Grassroots Action Since 2010' : '2010 முதல் சமூகப் பணி'}</span>
           </div>
 
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 shadow-xs">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
             <span>{lang === 'en' ? '0% Admin Overhead • 100% Volunteer-Led' : 'பூஜ்ஜிய நிர்வாகச் செலவு • 100% தன்னார்வம்'}</span>
           </div>
@@ -61,23 +66,36 @@ export default function Hero({
         {/* Hero Grid */}
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
-          {/* Left Text Column */}
-          <div className="lg:col-span-7 text-center lg:text-left space-y-6">
+          {/* Left Text Column with AOS */}
+          <div 
+            className="lg:col-span-7 text-center lg:text-left space-y-6"
+            data-aos="fade-right"
+            data-aos-duration="800"
+          >
             
             {/* Tamil & English Heading */}
             <div className="space-y-2">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#ea580c] tracking-tight tamil-title drop-shadow-sm">
-                சேவை களஞ்சியம்
-              </h2>
+              <div className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-[#ea580c] tamil-title drop-shadow-sm">
+                <span>சேவை களஞ்சியம் சமூக நல அறக்கட்டளை</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                <span className="text-xs uppercase tracking-wider text-slate-300 font-sans font-semibold">Regd Trust</span>
+              </div>
+              
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight font-display">
                 Turning Community Compassion Into <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-orange-400 to-rose-400">Lasting Change</span>
               </h1>
             </div>
 
-            {/* Foundational Principle Quote */}
-            <div className="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md text-slate-200">
-              <div className="flex items-start gap-3">
-                <span className="text-3xl text-amber-400 font-serif leading-none select-none">“</span>
+            {/* Foundational Principle Quote with ambient glow */}
+            <div 
+              data-aos="fade-up"
+              data-aos-delay="200"
+              className="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md text-slate-200 relative overflow-hidden shadow-inner group hover:border-amber-400/40 transition-colors"
+            >
+              <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500/10 rounded-full blur-xl pointer-events-none"></div>
+              
+              <div className="flex items-start gap-3 relative z-10">
+                <span className="text-3xl sm:text-4xl text-amber-400 font-serif leading-none select-none">“</span>
                 <div>
                   <p className="text-base sm:text-lg font-medium italic text-amber-100">
                     {lang === 'en'
@@ -91,7 +109,7 @@ export default function Hero({
               </div>
             </div>
 
-            {/* Concise Mission Narrative */}
+            {/* Mission Narrative */}
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl">
               {lang === 'en' ? (
                 <>
@@ -105,7 +123,11 @@ export default function Hero({
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2">
+            <div 
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-2"
+            >
               <button
                 onClick={onOpenVolunteerModal}
                 className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-[#ea580c] to-[#d91b5c] hover:from-[#c2410c] hover:to-[#be123c] shadow-lg shadow-orange-950/40 hover:shadow-orange-900/60 transition-all cursor-pointer transform hover:-translate-y-0.5"
@@ -141,20 +163,40 @@ export default function Hero({
 
           </div>
 
-          {/* Right Logo & 5 Wings Quick Hub */}
-          <div className="lg:col-span-5 flex flex-col items-center">
+          {/* Right Logo & 5 Wings Quick Hub with AOS */}
+          <div 
+            className="lg:col-span-5 flex flex-col items-center"
+            data-aos="fade-left"
+            data-aos-duration="800"
+          >
             
-            {/* Center Logo Showcase with Floating Rings */}
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72 flex items-center justify-center mb-6">
-              {/* Outer decorative ring */}
-              <div className="absolute inset-0 rounded-full border-2 border-dashed border-amber-400/30 animate-[spin_40s_linear_infinite]"></div>
-              <div className="absolute inset-2 rounded-full border border-indigo-400/20"></div>
+            {/* Center Logo Showcase with Floating Badges */}
+            <div className="relative w-72 h-72 sm:w-80 sm:h-80 flex items-center justify-center mb-6">
+              
+              {/* Outer rotating dashed ring */}
+              <div className="absolute inset-0 rounded-full border-2 border-dashed border-amber-400/30 animate-[spin_45s_linear_infinite]"></div>
+              <div className="absolute inset-3 rounded-full border border-indigo-400/20"></div>
               
               {/* Glow backdrop */}
-              <div className="absolute inset-6 rounded-full bg-gradient-to-tr from-[#ea580c] via-[#d91b5c] to-[#18144b] opacity-30 blur-xl"></div>
+              <div className="absolute inset-8 rounded-full bg-gradient-to-tr from-[#ea580c] via-[#d91b5c] to-[#18144b] opacity-40 blur-2xl"></div>
               
+              {/* Floating Badge 1 - Top Left */}
+              <div className="absolute -top-1 -left-2 z-20 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[11px] font-bold text-amber-200 shadow-md animate-float-slow">
+                🌾 Granary of Service
+              </div>
+
+              {/* Floating Badge 2 - Top Right */}
+              <div className="absolute top-2 -right-4 z-20 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[11px] font-bold text-emerald-200 shadow-md animate-float-reverse">
+                🌱 2-Yr Tree Care
+              </div>
+
+              {/* Floating Badge 3 - Bottom Left */}
+              <div className="absolute bottom-6 -left-6 z-20 px-3 py-1 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[11px] font-bold text-rose-200 shadow-md animate-float-reverse">
+                🍲 Surplus Food Rescue
+              </div>
+
               {/* White Circular Badge holding the Trust Logo */}
-              <div className="relative w-52 h-52 sm:w-56 sm:h-56 rounded-full bg-white p-3 shadow-2xl flex items-center justify-center border-4 border-white/90 transform hover:scale-105 transition-transform duration-300">
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-white p-3.5 shadow-2xl flex items-center justify-center border-4 border-white/95 transform hover:scale-105 transition-transform duration-300">
                 <img 
                   src="/sevai-logo.png" 
                   alt="Sevai Kalanjiyam Crest Logo" 
@@ -162,17 +204,23 @@ export default function Hero({
                 />
               </div>
 
-              {/* Floating Badge */}
-              <div className="absolute -bottom-2 bg-gradient-to-r from-amber-500 to-orange-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg border border-amber-300/40">
+              {/* Bottom Badge */}
+              <div className="absolute -bottom-2 bg-gradient-to-r from-amber-500 to-orange-600 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg border border-amber-300/40 z-20">
                 100% Volunteer Led
               </div>
             </div>
 
             {/* Quick Interactive Selector for the 5 Wings */}
-            <div className="w-full max-w-md bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15">
-              <div className="text-xs font-bold text-amber-300 uppercase tracking-wider mb-2.5 text-center">
-                {lang === 'en' ? 'Our 5 Dedicated Wings (களஞ்சியங்கள்)' : 'எங்கள் 5 சேவை களஞ்சியங்கள்'}
+            <div 
+              data-aos="zoom-in"
+              data-aos-delay="200"
+              className="w-full max-w-md bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/15 shadow-lg"
+            >
+              <div className="text-xs font-bold text-amber-300 uppercase tracking-wider mb-2.5 text-center flex items-center justify-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                <span>{lang === 'en' ? 'Our 5 Dedicated Wings (களஞ்சியங்கள்)' : 'எங்கள் 5 சேவை களஞ்சியங்கள்'}</span>
               </div>
+              
               <div className="grid grid-cols-5 gap-2">
                 {wingsQuick.map((wing) => {
                   const Icon = wing.icon;
@@ -207,9 +255,8 @@ export default function Hero({
 
       </div>
 
-      {/* Curved Divider */}
+      {/* Curved Bottom Divider */}
       <div className="absolute bottom-0 left-0 right-0 h-6 bg-[#faf9f5] [clip-path:ellipse(65%_100%_at_50%_100%)]"></div>
     </div>
   );
 }
-

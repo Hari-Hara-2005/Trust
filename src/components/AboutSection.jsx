@@ -7,7 +7,8 @@ import {
   Check, 
   MapPin, 
   Calendar,
-  Sparkles
+  Sparkles,
+  Award
 } from 'lucide-react';
 import { trustInfo } from '../data/trustData';
 
@@ -20,11 +21,16 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
   };
 
   return (
-    <section id="about" className="py-16 sm:py-24 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-16 sm:py-24 bg-white relative overflow-hidden">
+      
+      {/* Background Decorative Blobs */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-amber-50 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-50 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
-        {/* Top Badging */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16">
+        {/* Top Badging with AOS */}
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
           <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-50 text-[#18144b] border border-indigo-100 mb-3">
             <Sparkles className="w-3.5 h-3.5 text-[#ea580c]" />
             <span>{lang === 'en' ? 'Our Roots & Ethos' : 'எங்கள் தோற்றமும் கொள்கைகளும்'}</span>
@@ -48,8 +54,8 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
         {/* Narrative & Visual Concept of "Kalanjiyam" */}
         <div className="grid lg:grid-cols-12 gap-10 items-center mb-16">
           
-          {/* Left: The Story of Kalanjiyam */}
-          <div className="lg:col-span-7 space-y-6">
+          {/* Left: The Story of Kalanjiyam with AOS */}
+          <div className="lg:col-span-7 space-y-6" data-aos="fade-right" data-aos-duration="800">
             <div className="border-l-4 border-[#ea580c] pl-4 sm:pl-6 py-1">
               <h3 className="text-xl sm:text-2xl font-bold text-[#18144b] tamil-title">
                 {trustInfo.philosophy.title}
@@ -63,14 +69,14 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
               {trustInfo.philosophy.description}
             </p>
 
-            <div className="bg-[#faf9f5] rounded-2xl p-6 border border-amber-200/60 space-y-3.5">
-              <h4 className="font-bold text-sm text-[#18144b] flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#ea580c]"></span>
+            <div className="bg-[#faf9f5] rounded-3xl p-6 sm:p-7 border border-amber-200/80 space-y-4 shadow-2xs">
+              <h4 className="font-bold text-sm sm:text-base text-[#18144b] flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#ea580c]"></span>
                 {lang === 'en' ? 'Why We Stand Apart from Conventional NGOs:' : 'நாங்கள் எவ்வாறு தனித்து நிற்கிறோம்:'}
               </h4>
               
-              <ul className="space-y-2.5 text-xs sm:text-sm text-slate-700">
-                <li className="flex items-start gap-2.5">
+              <ul className="space-y-3 text-xs sm:text-sm text-slate-700">
+                <li className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="w-3.5 h-3.5" />
                   </div>
@@ -79,7 +85,7 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
                   </span>
                 </li>
 
-                <li className="flex items-start gap-2.5">
+                <li className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="w-3.5 h-3.5" />
                   </div>
@@ -88,7 +94,7 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
                   </span>
                 </li>
 
-                <li className="flex items-start gap-2.5">
+                <li className="flex items-start gap-3">
                   <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
                     <Check className="w-3.5 h-3.5" />
                   </div>
@@ -102,7 +108,7 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
             <div className="pt-2">
               <button
                 onClick={onOpenVolunteerModal}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm text-[#18144b] bg-amber-50 hover:bg-amber-100 border border-amber-200 transition-colors cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-sm text-white bg-[#141042] hover:bg-[#20195e] transition-all shadow-md cursor-pointer"
               >
                 <Users className="w-4 h-4 text-[#ea580c]" />
                 <span>{lang === 'en' ? 'Meet the Youth Volunteers' : 'தன்னார்வக் குழுவில் இணைய'}</span>
@@ -110,11 +116,12 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
             </div>
           </div>
 
-          {/* Right: Graphic Card with Pillars */}
-          <div className="lg:col-span-5">
-            <div className="relative rounded-3xl p-8 bg-gradient-to-br from-[#18144b] to-[#2b1875] text-white shadow-xl overflow-hidden">
+          {/* Right: Graphic Card with Pillars with AOS */}
+          <div className="lg:col-span-5" data-aos="fade-left" data-aos-duration="800">
+            <div className="relative rounded-3xl p-8 bg-gradient-to-br from-[#141042] via-[#211663] to-[#2e1263] text-white shadow-2xl overflow-hidden border border-indigo-900/60">
+              
               {/* Background ambient shine */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-[#ea580c]/10 rounded-full blur-2xl"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#ea580c]/15 rounded-full blur-2xl"></div>
               
               <div className="relative space-y-6">
                 <div className="flex items-center justify-between border-b border-white/10 pb-4">
@@ -129,16 +136,19 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
                   <img 
                     src="/sevai-logo.png" 
                     alt="Logo Badge" 
-                    className="w-10 h-10 object-contain rounded-full bg-white p-0.5" 
+                    className="w-11 h-11 object-contain rounded-full bg-white p-0.5 shadow-md" 
                   />
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3.5">
                   {trustInfo.philosophy.pillars.map((pillar, idx) => {
                     const PillarIcon = iconMap[pillar.icon] || HeartHandshake;
                     return (
-                      <div key={idx} className="flex items-start gap-3.5 p-3 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors">
-                        <div className="p-2 rounded-lg bg-amber-500/20 text-amber-300 shrink-0 mt-0.5">
+                      <div 
+                        key={idx} 
+                        className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all hover:scale-102"
+                      >
+                        <div className="p-2 rounded-xl bg-amber-500/20 text-amber-300 shrink-0 mt-0.5">
                           <PillarIcon className="w-5 h-5" />
                         </div>
                         <div>
@@ -175,4 +185,3 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
     </section>
   );
 }
-

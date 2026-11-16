@@ -10,11 +10,11 @@ export default function FAQSection({ lang, onOpenVolunteerModal, onOpenSupportMo
   };
 
   return (
-    <section className="py-16 sm:py-24 bg-white relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 sm:py-24 bg-white relative overflow-hidden">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
-        {/* Header */}
-        <div className="text-center mb-12">
+        {/* Header with AOS */}
+        <div className="text-center mb-12" data-aos="fade-up">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-orange-100 text-[#ea580c] mb-3">
             <HelpCircle className="w-4 h-4" />
             <span>{lang === 'en' ? 'Frequently Asked Questions' : 'அடிக்கடி கேட்கப்படும் கேள்விகள்'}</span>
@@ -31,14 +31,14 @@ export default function FAQSection({ lang, onOpenVolunteerModal, onOpenSupportMo
           </p>
         </div>
 
-        {/* Accordion List */}
-        <div className="space-y-3.5">
+        {/* Accordion List with AOS */}
+        <div className="space-y-3.5" data-aos="fade-up" data-aos-delay="100">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={index}
-                className="border border-slate-200/90 rounded-2xl overflow-hidden transition-all duration-200 bg-white shadow-2xs"
+                className="border border-slate-200/90 rounded-2xl overflow-hidden transition-all duration-200 bg-white shadow-2xs hover:border-slate-300"
               >
                 <button
                   onClick={() => toggleFAQ(index)}
@@ -64,26 +64,30 @@ export default function FAQSection({ lang, onOpenVolunteerModal, onOpenSupportMo
           })}
         </div>
 
-        {/* Still have questions prompt */}
-        <div className="mt-10 p-6 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-3">
-          <h4 className="font-bold text-sm text-[#18144b]">
+        {/* Still have questions prompt with AOS */}
+        <div 
+          data-aos="fade-up"
+          data-aos-delay="200"
+          className="mt-12 p-7 rounded-3xl bg-slate-50 border border-slate-200 text-center space-y-3"
+        >
+          <h4 className="font-bold text-base text-[#18144b]">
             {lang === 'en' ? 'Have a different question or want to partner with us?' : 'வேறு கேள்விகள் உள்ளதா அல்லது இணைந்து பணியாற்ற விரும்புகிறீர்களா?'}
           </h4>
-          <p className="text-xs text-slate-600">
+          <p className="text-xs text-slate-600 max-w-lg mx-auto">
             {lang === 'en'
               ? 'Our youth coordinators are always happy to speak with compassionate citizens, schools, and community leaders.'
               : 'எங்கள் தன்னார்வலர் குழுவை நேரடியாக வாட்ஸ்அப் அல்லது தொலைபேசியில் தொடர்பு கொள்ளலாம்.'}
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-1">
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
             <button
               onClick={onOpenVolunteerModal}
-              className="px-4 py-2 bg-[#18144b] text-white font-bold text-xs rounded-xl shadow-xs cursor-pointer"
+              className="px-5 py-2.5 bg-[#141042] hover:bg-[#20195e] text-white font-bold text-xs rounded-xl shadow-xs cursor-pointer transition-colors"
             >
               {lang === 'en' ? 'Talk to a Volunteer' : 'தன்னார்வலரிடம் பேச'}
             </button>
             <a
               href="#contact"
-              className="px-4 py-2 bg-white text-slate-700 hover:text-slate-900 border border-slate-300 font-bold text-xs rounded-xl cursor-pointer"
+              className="px-5 py-2.5 bg-white text-slate-700 hover:text-slate-900 border border-slate-300 font-bold text-xs rounded-xl cursor-pointer transition-colors"
             >
               {lang === 'en' ? 'View Contact Info' : 'தொடர்பு முகவரி'}
             </a>
@@ -94,4 +98,3 @@ export default function FAQSection({ lang, onOpenVolunteerModal, onOpenSupportMo
     </section>
   );
 }
-

@@ -444,3 +444,80 @@ export const faqs = [
   }
 ];
 
+export const impactStories = [
+  {
+    id: 1,
+    wing: "Kalvi Kalanjiyam",
+    wingId: "kalvi",
+    title: "Priya's Journey: From Vyasarpadi to Engineering",
+    titleTamil: "பிரியாவின் கல்விப் பயணம்: வியாசர்பாடியிலிருந்து பொறியியல் வரை",
+    location: "Vyasarpadi, Chennai",
+    quote: "When my father lost daily-wage work, Sevai Kalanjiyam gave me study kits, paid my 12th board fees, and mentored me every Sunday. Today, I am the first girl in our street studying computer science.",
+    quoteTamil: "குடும்ப வறுமையால் பள்ளிப் படிப்பை கைவிட நினைத்த போது, சேவை களஞ்சியம் புத்தகங்கள் வழங்கி, சிறப்பு வகுப்புகள் எடுத்து எனக்கு வழிகாட்டியது. இன்று எங்கள் தெருவிலேயே முதல் பொறியியல் மாணவியாக நான் திகழ்கிறேன்.",
+    metricBadge: "Mentored for 3 Years",
+    tag: "Education",
+    color: "from-blue-600 to-indigo-600"
+  },
+  {
+    id: 2,
+    wing: "Pasumai Kalanjiyam",
+    wingId: "pasumai",
+    title: "The 240-Tree Native Microforest",
+    titleTamil: "240 நாட்டு மரங்கள் கொண்ட பசுமைச் சோலை",
+    location: "Maraimalai Nagar, Chengalpattu",
+    quote: "Other groups planted saplings and never looked back. Sevai Kalanjiyam's youth watered our school saplings every Sunday morning for two straight years through peak summer. 94% of those trees are now 15 feet tall.",
+    quoteTamil: "புகைப்படத்திற்காக மரக்கன்றுகளை நட்டுவிட்டு போகாமல், இரண்டு ஆண்டுகள் வாரம்தோறும் நீர் ஊற்றி வேலியிட்டு பாதுகாத்தார்கள். இன்று எங்கள் அரசுப் பள்ளி வளாகம் பறவைகள் பாடும் பசுமைச் சோலையாக மாறியுள்ளது.",
+    metricBadge: "94% Tree Survival Rate",
+    tag: "Environment",
+    color: "from-emerald-600 to-teal-600"
+  },
+  {
+    id: 3,
+    wing: "Unavu Kalanjiyam",
+    wingId: "unavu",
+    title: "Midnight Surplus Food Rescue in T. Nagar",
+    titleTamil: "நள்ளிரவு உபரி உணவு மீட்பு - 180 பேரின் பசி தீர்த்த தருணம்",
+    location: "T. Nagar & Central Railway Station, Chennai",
+    quote: "A wedding hall alerted at 10:45 PM about 180 untouched meals. Within 40 minutes, volunteer bikes arrived, packed the hot meals with utmost hygiene, and served pavement dwellers before the midnight rains hit.",
+    quoteTamil: "திருமண மண்டபத்தில் மீதமான 180 பேரின் உணவை இரவு 11 மணிக்கு தன்னார்வலர்கள் உடனடியாக மீட்டு, மழை தொடங்குவதற்குள் சென்னை சென்ட்ரல் நடைபாதைவாசிகளுக்கு சூடாக பகிர்ந்தளித்தோம்.",
+    metricBadge: "180 Meals Rescued in 40 Mins",
+    tag: "Food Relief",
+    color: "from-amber-600 to-orange-600"
+  },
+  {
+    id: 4,
+    wing: "Tugil Kalanjiyam",
+    wingId: "tugil",
+    title: "Night Vigil Warmth: Pavement Blanket Patrol",
+    titleTamil: "குளிர்கால நள்ளிரவு கம்பளிப் பாதுகாப்பு",
+    location: "Royapuram & Stanley Hospital Pavements",
+    quote: "We don't wake up sleeping elders to take photos. We quietly drape heavy wool blankets over them with folded hands and leave with silent respect. Dignity comes before charity.",
+    quoteTamil: "தூங்கும் முதியவர்களை புகைப்படங்களுக்காக எழுப்பாமல், அமைதியாக கம்பளியை போர்த்தி வணங்கி விடைபெறுகிறோம். மனித சுயமரியாதையே எங்கள் முதல் அடையாளம்.",
+    metricBadge: "5,000+ Blankets Distributed",
+    tag: "Dignity",
+    color: "from-pink-600 to-rose-600"
+  },
+  {
+    id: 5,
+    wing: "Maruthuvam Kalanjiyam",
+    wingId: "maruthuvam",
+    title: "Emergency AB- Negative Rare Blood Response",
+    titleTamil: "அரிய வகை குருதிக்கொடை: 35 நிமிடத்தில் காப்பாற்றப்பட்ட உயிர்",
+    location: "Rajiv Gandhi Govt General Hospital, Chennai",
+    quote: "A mother undergoing emergency labor critically needed 2 units of rare AB- blood. Our volunteer network located a registered youth donor in Mylapore who reached the blood bank in 35 minutes.",
+    quoteTamil: "அவசர பிரசவ அறுவை சிகிச்சைக்கு அரிய வகை ரத்தம் தேவைப்பட்ட போது, எங்கள் தன்னார்வலர் 35 நிமிடங்களில் அரசு பொது மருத்துவமனைக்கு சென்று ரத்ததானம் வழங்கி தாயையும் சேயையும் காத்தார்.",
+    metricBadge: "35 Min Rapid Response",
+    tag: "Healthcare",
+    color: "from-cyan-600 to-teal-700"
+  }
+];
+
+export const liveUpdates = [
+  "Kalvi Kalanjiyam: Distributed 150 Puthaka Koodu kits to North Chennai corporation school students",
+  "Pasumai Kalanjiyam: Completed Week-74 geo-tagged watering drive for 210 native saplings in Tambaram",
+  "Unavu Kalanjiyam: Rescued 240 untouched wedding meals in Velachery and delivered to children's shelter",
+  "Tugil Kalanjiyam: Gifting new traditional attire to 120 rural children ahead of upcoming festivals",
+  "Maruthuvam Kalanjiyam: Coordinated 4 emergency platelet & blood donor requests across Chennai GH today"
+];
+
+
