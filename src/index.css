@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  }
+}
+
+/* Custom subtle glassmorphism and accents */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.tamil-title {
+  font-family: 'Mukta Malar', 'Noto Sans Tamil', system-ui, sans-serif;
+}
+
+/* Custom gradients matching Sevai Kalanjiyam branding */
+.gradient-header {
+  background: linear-gradient(135deg, #18144b 0%, #291a70 50%, #431c77 100%);
+}
+
+.gradient-card-kalvi {
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+}
+.gradient-card-pasumai {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+}
+.gradient-card-unavu {
+  background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%);
+}
+.gradient-card-tugil {
+  background: linear-gradient(135deg, #fdf2f8 0%, #ffffff 100%);
+}
+.gradient-card-maruthuvam {
+  background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
+}
+
