@@ -52,7 +52,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#faf9f5] flex flex-col font-sans selection:bg-[#ea580c] selection:text-white">
+    <div className="min-h-screen bg-[#f1f4ee] flex flex-col font-sans selection:bg-[#ebc766] selection:text-[#172d25]">
       {/* Navigation */}
       <Navbar
         lang={lang}

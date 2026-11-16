@@ -5,27 +5,46 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-size: 16px; /* Standard balanced root font size */
-    font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #f1f4ee;
+    color: #172d25;
   }
   
   body {
-    font-size: 1rem;
+    background-color: #f1f4ee;
+    color: #172d25;
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', 'Inter', sans-serif;
+    color: #172d25;
+    letter-spacing: -0.03em;
   }
 }
 
-/* Custom subtle glassmorphism and accents */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+/* Careunity Design System Classes */
+.pill-label-text {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #526158;
 }
 
-.glass-dark {
-  background: rgba(24, 20, 75, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+.care-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1.1rem;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  border: 1px solid #cdd5c9;
+  color: #172d25;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(23, 45, 37, 0.04);
 }
 
 .tamil-title {
@@ -34,85 +53,94 @@
   line-height: 1.35;
 }
 
-/* Custom glow and float animations */
-@keyframes floatSlow {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(1deg); }
+/* Careunity Button Styles */
+.btn-care-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background-color: #172d25;
+  color: #ffffff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(23, 45, 37, 0.12);
+}
+.btn-care-primary:hover {
+  background-color: #173f32;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(23, 45, 37, 0.18);
 }
 
-@keyframes floatReverse {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(6px) rotate(-1deg); }
+.btn-care-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background-color: #ebc766;
+  color: #172d25;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9999px;
+  font-weight: 800;
+  font-size: 0.9375rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(235, 199, 102, 0.3);
+}
+.btn-care-gold:hover {
+  background-color: #dfb84d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(235, 199, 102, 0.4);
 }
 
-@keyframes pulseGlow {
-  0%, 100% { opacity: 0.35; transform: scale(1); }
-  50% { opacity: 0.65; transform: scale(1.06); }
+.btn-care-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background-color: transparent;
+  color: #172d25;
+  border: 1px solid #cdd5c9;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-care-secondary:hover {
+  background-color: #ffffff;
+  border-color: #172d25;
+  transform: translateY(-2px);
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-.animate-float-slow {
-  animation: floatSlow 6s ease-in-out infinite;
-}
-
-.animate-float-reverse {
-  animation: floatReverse 7s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 4s ease-in-out infinite;
-}
-
-.shimmer-text {
-  background: linear-gradient(90deg, #fcd34d 0%, #ffffff 50%, #f97316 100%);
-  background-size: 200% auto;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: shimmer 5s linear infinite;
-}
-
-/* Card hover glow & depth */
-.hover-card-glow {
+/* Careunity Card Style */
+.care-card {
+  background-color: #ffffff;
+  border: 1px solid #cdd5c9;
+  border-radius: 1.75rem;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.hover-card-glow:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 16px 30px -8px rgba(24, 20, 75, 0.1), 0 8px 12px -4px rgba(234, 88, 12, 0.06);
+.care-card:hover {
+  border-color: #173f32;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 35px -10px rgba(23, 45, 37, 0.08);
 }
 
-/* Custom scroll progress bar */
+/* Custom scroll progress bar matching Careunity */
 #scroll-progress {
   position: fixed;
   top: 0;
   left: 0;
   height: 3.5px;
-  background: linear-gradient(90deg, #ea580c, #d91b5c, #f59e0b);
+  background: linear-gradient(90deg, #173f32, #ebc766, #172d25);
   z-index: 100;
   transition: width 0.1s ease;
 }
 
-/* Custom gradients matching Sevai Kalanjiyam branding */
-.gradient-header {
-  background: linear-gradient(135deg, #18144b 0%, #291a70 50%, #431c77 100%);
-}
-
-.gradient-card-kalvi {
-  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
-}
-.gradient-card-pasumai {
-  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
-}
-.gradient-card-unavu {
-  background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%);
-}
-.gradient-card-tugil {
-  background: linear-gradient(135deg, #fdf2f8 0%, #ffffff 100%);
-}
-.gradient-card-maruthuvam {
-  background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
+/* Subtle organic card highlight */
+.care-card-dark {
+  background-color: #172d25;
+  color: #ffffff;
+  border-radius: 1.75rem;
 }

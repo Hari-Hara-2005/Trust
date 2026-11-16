@@ -10,7 +10,8 @@ import {
   UtensilsCrossed, 
   Shirt, 
   Stethoscope,
-  ArrowRight
+  ArrowRight,
+  ArrowUpRight
 } from 'lucide-react';
 import { impactStories } from '../data/trustData';
 
@@ -30,76 +31,69 @@ export default function ImpactStoriesSection({ lang, onSelectWing, onOpenSupport
     : impactStories.filter(s => s.wingId === selectedFilter);
 
   return (
-    <section className="py-16 sm:py-24 bg-gradient-to-b from-[#faf9f5] via-white to-[#faf9f5] relative overflow-hidden">
-      
-      {/* Decorative ambient spots */}
-      <div className="absolute top-1/4 right-0 w-80 h-80 bg-orange-100/60 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="absolute bottom-10 left-0 w-80 h-80 bg-indigo-100/50 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+    <section id="stories" className="py-20 sm:py-28 bg-[#f1f4ee] relative overflow-hidden border-b border-[#cdd5c9]/60">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Header with AOS */}
-        <div className="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
-          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-orange-100 text-[#ea580c] mb-3">
-            <Heart className="w-3.5 h-3.5 text-[#ea580c]" />
-            <span>{lang === 'en' ? 'Voices of Dignity' : 'களப்பணியின் உண்மை சாட்சிகள்'}</span>
+        {/* Careunity Section Header */}
+        <div className="max-w-3xl mb-12" data-aos="fade-up">
+          <div className="pill-label-text mb-2">
+            / VOICES FROM THE GROUND /
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#18144b] font-display">
-            {lang === 'en' ? (
-              <>Stories of Compassion, <span className="text-[#ea580c]">Preserved Dignity</span></>
-            ) : (
-              <>சுயமரியாதையோடு கூடிய <span className="text-[#ea580c]">மாற்றத்தின் சான்றுகள்</span></>
-            )}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#172d25] font-display tracking-tight leading-tight">
+            {lang === 'en' ? 'Real stories. Real change.' : 'சுயமரியாதையோடு கூடிய மாற்றத்தின் சான்றுகள்.'}
           </h2>
 
-          <p className="mt-3 text-slate-600 text-sm sm:text-base leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base text-[#526158] leading-relaxed">
             {lang === 'en'
               ? "Every initiative is rooted in direct brotherhood and respect. Here are real glimpses from our ground work across Tamil Nadu."
               : "புகைப்பட வெளிச்சங்களுக்காக அல்லாமல், உள்ளத்து அன்போடு களப்பணியாற்றிய தருணங்களின் உண்மைப் பதிவுகள்."}
           </p>
         </div>
 
-        {/* Filter Pills with AOS */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10" data-aos="fade-up" data-aos-delay="100">
+        {/* Filter Pills with Careunity Aesthetic */}
+        <div 
+          data-aos="fade-up"
+          data-aos-delay="100"
+          className="flex flex-wrap items-center gap-2 mb-10"
+        >
           <button
             onClick={() => setSelectedFilter('all')}
-            className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
+            className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer border ${
               selectedFilter === 'all'
-                ? 'bg-[#141042] text-white shadow-md'
-                : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                ? 'bg-[#172d25] text-white border-[#172d25]'
+                : 'bg-white text-[#172d25] border-[#cdd5c9] hover:bg-[#cdd5c9]/40'
             }`}
           >
-            {lang === 'en' ? 'All Wings' : 'அனைத்து பிரிவுகள்'}
+            {lang === 'en' ? 'All Stories' : 'அனைத்து பிரிவுகள்'}
           </button>
 
           {['kalvi', 'pasumai', 'unavu', 'tugil', 'maruthuvam'].map(id => {
-            const Icon = wingIcons[id];
             const labels = {
-              kalvi: 'Kalvi (Education)',
-              pasumai: 'Pasumai (Green)',
-              unavu: 'Unavu (Food)',
-              tugil: 'Tugil (Clothing)',
-              maruthuvam: 'Maruthuvam (Health)'
+              kalvi: 'Education',
+              pasumai: 'Environment',
+              unavu: 'Food Relief',
+              tugil: 'Clothing & Dignity',
+              maruthuvam: 'Healthcare'
             };
+            const isSelected = selectedFilter === id;
             return (
               <button
                 key={id}
                 onClick={() => setSelectedFilter(id)}
-                className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold transition-all cursor-pointer ${
-                  selectedFilter === id
-                    ? 'bg-[#ea580c] text-white shadow-md'
-                    : 'bg-white text-slate-700 hover:bg-slate-100 border border-slate-200'
+                className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer border ${
+                  isSelected
+                    ? 'bg-[#172d25] text-white border-[#172d25]'
+                    : 'bg-white text-[#172d25] border-[#cdd5c9] hover:bg-[#cdd5c9]/40'
                 }`}
               >
-                <Icon className="w-3.5 h-3.5" />
                 <span>{labels[id]}</span>
               </button>
             );
           })}
         </div>
 
-        {/* Stories Grid with AOS */}
+        {/* Stories Grid in Careunity Card Style */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredStories.map((story, idx) => {
             const Icon = wingIcons[story.wingId] || Sparkles;
@@ -108,53 +102,52 @@ export default function ImpactStoriesSection({ lang, onSelectWing, onOpenSupport
                 key={story.id}
                 data-aos="fade-up"
                 data-aos-delay={idx * 100}
-                className="bg-white rounded-3xl p-7 border border-slate-200/90 shadow-2xs hover-card-glow flex flex-col justify-between relative group"
+                className="care-card p-7 flex flex-col justify-between group"
               >
-                {/* Top Wing tag & Location */}
-                <div className="space-y-3">
+                <div className="space-y-3.5">
+                  {/* Top Tag & Metric Badge */}
                   <div className="flex items-center justify-between">
-                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#18144b] bg-slate-100 px-3 py-1 rounded-full">
-                      <Icon className="w-3.5 h-3.5 text-[#ea580c]" />
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#172d25] bg-[#f1f4ee] border border-[#cdd5c9] px-3 py-1 rounded-full">
+                      <span className="w-2 h-2 rounded-full bg-[#173f32]"></span>
                       <span>{story.wing}</span>
                     </span>
-                    <span className="text-[11px] font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2.5 py-0.5 rounded-full">
+                    <span className="text-[11px] font-bold text-[#173f32] bg-[#f1f4ee] border border-[#cdd5c9] px-2.5 py-0.5 rounded-full">
                       {story.metricBadge}
                     </span>
                   </div>
 
-                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-[#ea580c] transition-colors leading-snug">
+                  <h3 className="text-lg font-bold text-[#172d25] group-hover:text-[#173f32] transition-colors leading-snug">
                     {lang === 'en' ? story.title : story.titleTamil}
                   </h3>
 
-                  <div className="flex items-center gap-1 text-xs text-slate-500 font-semibold">
-                    <MapPin className="w-3.5 h-3.5 text-[#ea580c] shrink-0" />
+                  <div className="flex items-center gap-1 text-xs text-[#526158] font-medium">
+                    <MapPin className="w-3.5 h-3.5 text-[#173f32] shrink-0" />
                     <span>{story.location}</span>
                   </div>
 
-                  {/* Quote with decorative icon */}
-                  <div className="relative pt-2">
-                    <Quote className="w-8 h-8 text-amber-200/60 absolute -top-1 -left-1 -z-0" />
-                    <p className="text-xs sm:text-sm text-slate-600 italic leading-relaxed relative z-10 pl-2">
+                  {/* Quote */}
+                  <div className="relative pt-1">
+                    <p className="text-xs sm:text-sm text-[#526158] italic leading-relaxed">
                       "{lang === 'en' ? story.quote : story.quoteTamil}"
                     </p>
                   </div>
                 </div>
 
                 {/* Bottom Card Action */}
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                <div className="mt-6 pt-4 border-t border-[#cdd5c9]/60 flex items-center justify-between">
                   <button
                     onClick={() => onSelectWing(story.wingId)}
-                    className="text-xs font-bold text-[#18144b] hover:text-[#ea580c] flex items-center gap-1 transition-colors cursor-pointer"
+                    className="text-xs font-bold text-[#172d25] hover:text-[#173f32] flex items-center gap-1 transition-colors cursor-pointer"
                   >
                     <span>{lang === 'en' ? 'Learn about this wing' : 'இப்பிரிவை பற்றி அறிய'}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowUpRight className="w-3.5 h-3.5" />
                   </button>
 
                   <button
                     onClick={onOpenSupportModal}
-                    className="text-xs font-bold text-[#ea580c] hover:underline cursor-pointer"
+                    className="text-xs font-bold text-[#173f32] hover:underline cursor-pointer"
                   >
-                    {lang === 'en' ? 'Support Cause' : 'ஆதரவளிக்க'}
+                    {lang === 'en' ? 'Support' : 'ஆதரவளிக்க'}
                   </button>
                 </div>
               </div>
