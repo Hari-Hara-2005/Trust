@@ -166,7 +166,7 @@ export default function Navbar({
             </nav>
 
             {/* Action CTAs in Careunity Pill Style */}
-            <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               {/* Volunteer CTA (Desktop full view) */}
               <button
                 onClick={onOpenVolunteerModal}
@@ -176,29 +176,22 @@ export default function Navbar({
                 <span>{lang === 'en' ? 'Volunteer' : 'இணையுங்கள்'}</span>
               </button>
 
-              {/* Careunity Signature Primary Donate Button */}
+              {/* Single Adaptive Donate Button (Never duplicates, responsive text & padding) */}
               <button
                 onClick={onOpenSupportModal}
-                className="hidden sm:inline-flex btn-care-primary group text-xs xl:text-sm py-1.5 xl:py-2 px-3.5 xl:px-5 cursor-pointer whitespace-nowrap shadow-xs"
+                className="btn-care-primary group text-xs sm:text-sm py-1.5 sm:py-2 px-3 sm:px-4 md:px-5 cursor-pointer whitespace-nowrap shadow-xs"
               >
-                <span>{lang === 'en' ? 'Donate Now' : 'ஆதரவளிக்க'}</span>
-                <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-[#ebc766] group-hover:text-[#172d25] transition-colors shrink-0">
-                  <ArrowUpRight className="w-3 h-3" />
+                <span>{lang === 'en' ? 'Donate' : 'ஆதரவு'}</span>
+                <span className="hidden sm:inline">{lang === 'en' ? ' Now' : 'ளிக்க'}</span>
+                <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-[#ebc766] group-hover:text-[#172d25] transition-colors shrink-0">
+                  <ArrowUpRight className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                 </div>
-              </button>
-
-              {/* Mobile Donate Button (<640px) */}
-              <button
-                onClick={onOpenSupportModal}
-                className="sm:hidden px-3 py-1.5 text-[11px] font-bold text-white bg-[#172d25] rounded-full shadow-xs cursor-pointer font-display whitespace-nowrap"
-              >
-                {lang === 'en' ? 'Donate' : 'ஆதரவு'}
               </button>
 
               {/* Mobile Menu Hamburger Toggle */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-1.5 sm:p-2 text-[#172d25] hover:bg-white rounded-full transition-colors cursor-pointer border border-[#cdd5c9] shrink-0"
+                className="lg:hidden p-2 text-[#172d25] hover:bg-white rounded-full transition-colors cursor-pointer border border-[#cdd5c9] shrink-0"
                 aria-label="Open mobile menu"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
