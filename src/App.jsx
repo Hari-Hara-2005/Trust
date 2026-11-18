@@ -63,19 +63,15 @@ export default function App() {
         onOpenSupportModal={() => setIsSupportModalOpen(true)}
       />
 
-      {/* Main Content */}
-      <main className="flex-grow">
+      {/* Main Content with calibrated clearance for fixed navbar */}
+      <main className="flex-grow pt-[104px] sm:pt-[112px]">
         {/* Hero with Trust Logo & Core Ethos */}
         <Hero
           lang={lang}
           onOpenVolunteerModal={() => setIsVolunteerModalOpen(true)}
           onOpenSupportModal={() => setIsSupportModalOpen(true)}
-          onSelectWing={handleSelectWing}
-        />
-
-        {/* Impact Numbers */}
-        <StatsCounter
-          lang={lang}
+          onOpenFoodModal={() => setIsFoodModalOpen(true)}
+          onOpenBloodModal={() => setIsBloodModalOpen(true)}
           onSelectWing={handleSelectWing}
         />
 
@@ -96,16 +92,22 @@ export default function App() {
           onOpenVolunteerModal={() => setIsVolunteerModalOpen(true)}
         />
 
-        {/* Real Grassroots Impact Stories */}
-        <ImpactStoriesSection
+        {/* Impact Numbers */}
+        <StatsCounter
           lang={lang}
           onSelectWing={handleSelectWing}
-          onOpenSupportModal={() => setIsSupportModalOpen(true)}
         />
 
         {/* Radical Transparency & Zero Overhead Guarantee */}
         <TransparencySection
           lang={lang}
+          onOpenSupportModal={() => setIsSupportModalOpen(true)}
+        />
+
+        {/* Real Grassroots Impact Stories */}
+        <ImpactStoriesSection
+          lang={lang}
+          onSelectWing={handleSelectWing}
           onOpenSupportModal={() => setIsSupportModalOpen(true)}
         />
 

@@ -21,155 +21,189 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
   };
 
   return (
-    <section id="about" className="py-20 sm:py-28 bg-[#f1f4ee] relative overflow-hidden border-b border-[#cdd5c9]/60">
+    <section id="about" className="py-20 sm:py-28 bg-[#f1f4ee] relative overflow-hidden border-b border-[#cdd5c9]/60 scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Careunity Section Header */}
-        <div className="max-w-3xl mb-14" data-aos="fade-up">
-          <div className="pill-label-text mb-2">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-12 sm:mb-14" data-aos="fade-up">
+          <div className="pill-label-text mb-3 tracking-widest">
             / THE SPIRIT OF KALANJIYAM /
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#172d25] font-display tracking-tight leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#172d25] font-display tracking-tight leading-[1.24] sm:leading-[1.2]">
             {lang === 'en' ? (
-              <>A modern granary of <span className="text-[#173f32]">compassion & civic duty.</span></>
+              <>A modern granary of <br className="hidden sm:inline" /><span className="text-[#173f32]">compassion & civic duty.</span></>
             ) : (
-              <>கருணையின் களஞ்சியம்: <span className="text-[#173f32]">சேவை களஞ்சியம்</span></>
+              <>கருணையின் களஞ்சியம்: <br className="hidden sm:inline" /><span className="text-[#173f32]">சேவை களஞ்சியம்</span></>
             )}
           </h2>
 
-          <p className="mt-4 text-sm sm:text-base lg:text-lg text-[#526158] leading-relaxed">
+          <p className="mt-4 sm:mt-5 text-sm sm:text-base lg:text-[17px] text-[#526158] leading-[1.78] max-w-3xl">
             {lang === 'en'
-              ? trustInfo.missionStatement
-              : trustInfo.missionStatementTamil}
+              ? "In ancient Tamil heritage, a Kalanjiyam was a village granary—preserving excess harvest during abundant seasons to sustain and protect every family during lean times. We carry this sacred tradition forward into social welfare, storing community compassion, youth time, and resources to distribute them with supreme dignity."
+              : "பண்டைய தமிழர் மரபில் களஞ்சியம் என்பது விளைச்சல் மிகுந்த காலத்தில் தானியங்களைச் சேமித்து, பற்றாக்குறை காலத்தில் அனைத்து மக்களுக்கும் பகிர்ந்தளிக்கும் கிராமத்து அரணாகும். அந்த தூய அறநெறியையே நாம் மக்கள் சேவையில் முன்னெடுக்கிறோம்."}
           </p>
         </div>
 
-        {/* Narrative & Visual Concept */}
-        <div className="grid lg:grid-cols-12 gap-10 items-start mb-16">
+        {/* Row 1: Narrative & Stand-Apart Card (Equal Height Balanced Columns) */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-stretch mb-12 sm:mb-14">
           
-          {/* Left Narrative */}
-          <div className="lg:col-span-7 space-y-6" data-aos="fade-right">
-            <div className="border-l-3 border-[#173f32] pl-4 sm:pl-5 py-1">
-              <h3 className="text-xl sm:text-2xl font-bold text-[#172d25] tamil-title">
-                {trustInfo.philosophy.title}
-              </h3>
-              <p className="text-xs sm:text-sm font-bold text-[#173f32] mt-0.5 uppercase tracking-wider">
-                {lang === 'en' ? 'Duty, Not Charity (கடமை, தானம் அல்ல)' : 'கடமை, தானம் அல்ல'}
+          {/* Left: Philosophy & Ethos */}
+          <div className="lg:col-span-6 flex flex-col justify-between space-y-6" data-aos="fade-right">
+            <div className="space-y-4">
+              <div className="border-l-4 border-[#173f32] pl-4 sm:pl-5 py-1.5 space-y-1.5">
+                <h3 className="text-xl sm:text-2xl font-extrabold text-[#172d25] font-display tracking-tight leading-snug">
+                  {trustInfo.philosophy.title}
+                </h3>
+                <p className="text-xs sm:text-sm font-bold text-[#173f32] uppercase tracking-wider">
+                  {lang === 'en' ? 'Duty, Not Charity (கடமை, தானம் அல்ல)' : 'கடமை, தானம் அல்ல'}
+                </p>
+              </div>
+
+              <p className="text-sm sm:text-base text-[#526158] leading-[1.8]">
+                {trustInfo.philosophy.description}
               </p>
             </div>
 
-            <p className="text-sm sm:text-base text-[#526158] leading-relaxed">
-              {trustInfo.philosophy.description}
-            </p>
-
-            {/* Careunity Stand Apart Card */}
-            <div className="bg-white rounded-[28px] p-6 sm:p-7 border border-[#cdd5c9] space-y-4 shadow-xs">
-              <h4 className="font-extrabold text-sm sm:text-base text-[#172d25] flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#173f32]"></span>
-                {lang === 'en' ? 'Why We Stand Apart from Conventional NGOs:' : 'நாங்கள் எவ்வாறு தனித்து நிற்கிறோம்:'}
-              </h4>
-              
-              <ul className="space-y-3.5 text-xs sm:text-sm text-[#526158]">
-                <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#173f32] text-white flex items-center justify-center shrink-0 mt-0.5 text-xs">
-                    ✓
-                  </div>
-                  <span>
-                    <strong className="text-[#172d25]">{lang === 'en' ? 'No Salaried Executives:' : 'ஊதியமில்லா நிர்வாகம்:'}</strong> {lang === 'en' ? 'Every coordinator works in a full-time professional career and volunteers weekends for the trust.' : 'அனைத்து ஒருங்கிணைப்பாளர்களும் தங்கள் ஓய்வு நேரத்தை முழுமையாக அர்ப்பணித்து களப்பணியாற்றுகின்றனர்.'}
-                  </span>
-                </li>
-
-                <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#173f32] text-white flex items-center justify-center shrink-0 mt-0.5 text-xs">
-                    ✓
-                  </div>
-                  <span>
-                    <strong className="text-[#172d25]">{lang === 'en' ? 'Preserving Beneficiary Pride:' : 'பயனாளியின் சுயமரியாதை:'}</strong> {lang === 'en' ? 'We do not humiliate receivers with intrusive publicity. Service is delivered as an elder brother or sister helping family.' : 'எந்தவொரு பயனாளியையும் புகைப்படங்களுக்காக சங்கடப்படுத்தாமல் குடும்ப உறுப்பினராக பாவித்து உதவுகிறோம்.'}
-                  </span>
-                </li>
-
-                <li className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#173f32] text-white flex items-center justify-center shrink-0 mt-0.5 text-xs">
-                    ✓
-                  </div>
-                  <span>
-                    <strong className="text-[#172d25]">{lang === 'en' ? 'Direct Ground Verification:' : 'நேரடி கள ஆய்வு:'}</strong> {lang === 'en' ? 'Volunteers personally inspect schools, slum clusters, and hospitals before launching initiatives.' : 'தேவைப்படும் பள்ளிகள் மற்றும் ஏழைப் பகுதிகளை நேரில் ஆய்வு செய்த பின்பே திட்டங்கள் வகுக்கப்படுகின்றன.'}
-                  </span>
-                </li>
-              </ul>
-            </div>
-
+            {/* Meet Youth Volunteers CTA Button */}
             <div className="pt-2">
               <button
                 onClick={onOpenVolunteerModal}
-                className="btn-care-primary group"
+                className="btn-care-primary group text-xs sm:text-sm py-3 px-6 cursor-pointer shadow-xs inline-flex"
               >
                 <Users className="w-4 h-4 text-[#ebc766]" />
                 <span>{lang === 'en' ? 'Meet the Youth Volunteers' : 'தன்னார்வக் குழுவில் இணைய'}</span>
-                <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center">
+                <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-[#ebc766] group-hover:text-[#172d25] transition-colors shrink-0">
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </div>
               </button>
             </div>
           </div>
 
-          {/* Right: The 4 Pillars Card Grid */}
-          <div className="lg:col-span-5" data-aos="fade-left">
-            <div className="bg-[#172d25] text-white rounded-[32px] p-7 sm:p-8 space-y-6 shadow-md border border-[#234539]">
+          {/* Right: Why We Stand Apart Card */}
+          <div className="lg:col-span-6" data-aos="fade-left">
+            <div className="h-full bg-white rounded-[28px] p-6 sm:p-7 border border-[#cdd5c9] space-y-4 shadow-xs flex flex-col justify-between">
+              <h4 className="font-extrabold text-sm sm:text-base text-[#172d25] flex items-center gap-2.5 font-display pb-2 border-b border-[#cdd5c9]/50">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#173f32] shrink-0"></span>
+                <span>{lang === 'en' ? 'Why We Stand Apart from Conventional NGOs:' : 'நாங்கள் எவ்வாறு தனித்து நிற்கிறோம்:'}</span>
+              </h4>
               
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                <div>
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#ebc766]">
-                    Ethical Foundations
-                  </span>
-                  <h4 className="text-xl font-extrabold text-white font-display">
-                    The 4 Pillars of Sevai
-                  </h4>
-                </div>
-                <img 
-                  src="/sevai-logo.png" 
-                  alt="Logo Badge" 
-                  className="w-10 h-10 object-contain rounded-full bg-white p-0.5" 
-                />
-              </div>
+              <ul className="space-y-4 text-xs sm:text-sm text-[#526158]">
+                <li className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#173f32] text-white flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold shadow-2xs">
+                    ✓
+                  </div>
+                  <div className="leading-[1.6]">
+                    <strong className="text-[#172d25] font-bold block sm:inline">
+                      {lang === 'en' ? 'No Salaried Executives: ' : 'ஊதியமில்லா நிர்வாகம்: '}
+                    </strong>
+                    <span>
+                      {lang === 'en' 
+                        ? 'Every coordinator works in a full-time professional career and volunteers weekends for the trust.' 
+                        : 'அனைத்து ஒருங்கிணைப்பாளர்களும் தங்கள் ஓய்வு நேரத்தை முழுமையாக அர்ப்பணித்து களப்பணியாற்றுகின்றனர்.'}
+                    </span>
+                  </div>
+                </li>
 
-              <div className="space-y-3.5">
-                {trustInfo.philosophy.pillars.map((pillar, idx) => {
-                  const PillarIcon = iconMap[pillar.icon] || HeartHandshake;
-                  return (
-                    <div 
-                      key={idx} 
-                      className="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all"
-                    >
-                      <div className="p-2 rounded-xl bg-[#ebc766]/20 text-[#ebc766] shrink-0 mt-0.5">
-                        <PillarIcon className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <h5 className="text-sm font-bold text-white flex items-center gap-2">
-                          <span>{lang === 'en' ? pillar.title : pillar.titleTamil}</span>
-                        </h5>
-                        <p className="text-xs text-white/70 mt-0.5 leading-relaxed">
-                          {pillar.desc}
-                        </p>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
+                <li className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#173f32] text-white flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold shadow-2xs">
+                    ✓
+                  </div>
+                  <div className="leading-[1.6]">
+                    <strong className="text-[#172d25] font-bold block sm:inline">
+                      {lang === 'en' ? 'Preserving Beneficiary Pride: ' : 'பயனாளியின் சுயமரியாதை: '}
+                    </strong>
+                    <span>
+                      {lang === 'en' 
+                        ? 'We do not humiliate receivers with intrusive publicity. Service is delivered as an elder brother or sister helping family.' 
+                        : 'எந்தவொரு பயனாளியையும் புகைப்படங்களுக்காக சங்கடப்படுத்தாமல் குடும்ப உறுப்பினராக பாவித்து உதவுகிறோம்.'}
+                    </span>
+                  </div>
+                </li>
 
-              {/* Chennai Roots footer */}
-              <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-white/60 font-medium">
-                <span className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#ebc766]" />
-                  Chennai, Tamil Nadu
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5 text-[#ebc766]" />
-                  Active Since 2010
-                </span>
-              </div>
+                <li className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#173f32] text-white flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold shadow-2xs">
+                    ✓
+                  </div>
+                  <div className="leading-[1.6]">
+                    <strong className="text-[#172d25] font-bold block sm:inline">
+                      {lang === 'en' ? 'Direct Ground Verification: ' : 'நேரடி கள ஆய்வு: '}
+                    </strong>
+                    <span>
+                      {lang === 'en' 
+                        ? 'Volunteers personally inspect schools, slum clusters, and hospitals before launching initiatives.' 
+                        : 'தேவைப்படும் பள்ளிகள் மற்றும் ஏழைப் பகுதிகளை நேரில் ஆய்வு செய்த பின்பே திட்டங்கள் வகுக்கப்படுகின்றன.'}
+                    </span>
+                  </div>
+                </li>
+              </ul>
             </div>
+          </div>
+
+        </div>
+
+        {/* Row 2: The 4 Pillars of Sevai (Full Width Horizontal Showcase — No Overhang!) */}
+        <div 
+          data-aos="fade-up"
+          className="bg-[#172d25] text-white rounded-[32px] p-6 sm:p-8 lg:p-9 border border-[#234539] shadow-md relative overflow-hidden"
+        >
+          {/* Subtle ambient light glow */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-[#ebc766]/5 rounded-full blur-3xl pointer-events-none"></div>
+
+          {/* Banner Header */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-white/10 gap-4 mb-6">
+            <div className="space-y-1">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#ebc766] block font-display">
+                / ETHICAL FOUNDATIONS /
+              </span>
+              <h4 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white font-display tracking-tight">
+                {lang === 'en' ? 'The 4 Pillars of Sevai Kalanjiyam' : 'சேவை களஞ்சியத்தின் 4 தூண்கள்'}
+              </h4>
+            </div>
+
+            <div className="flex items-center gap-4 shrink-0">
+              <div className="text-right hidden sm:block">
+                <span className="text-xs text-[#ebc766] font-bold block">100% Volunteer Model</span>
+                <span className="text-[11px] text-white/60">Active Since 2010 • Chennai</span>
+              </div>
+              <img 
+                src="/sevai-logo.png" 
+                alt="Sevai Logo" 
+                className="w-12 h-12 rounded-full bg-white p-0.5 border-2 border-[#ebc766]/60 shadow-xs object-contain shrink-0" 
+              />
+            </div>
+          </div>
+
+          {/* 4 Pillars Grid: 4 Clean Columns Across Screen */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+            {trustInfo.philosophy.pillars.map((pillar, idx) => {
+              const PillarIcon = iconMap[pillar.icon] || HeartHandshake;
+              return (
+                <div 
+                  key={idx} 
+                  className="flex flex-col justify-between p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#ebc766]/40 transition-all group shadow-2xs"
+                >
+                  <div className="space-y-3">
+                    <div className="w-10 h-10 rounded-xl bg-[#ebc766]/20 text-[#ebc766] flex items-center justify-center shrink-0 group-hover:bg-[#ebc766] group-hover:text-[#172d25] transition-colors">
+                      <PillarIcon className="w-5 h-5" />
+                    </div>
+                    
+                    <div className="space-y-1.5">
+                      <h5 className="text-sm sm:text-base font-bold text-white font-display leading-snug">
+                        {lang === 'en' ? pillar.title : pillar.titleTamil}
+                      </h5>
+                      <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed">
+                        {pillar.desc}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="pt-3 mt-4 border-t border-white/5 flex items-center gap-1.5 text-[10px] font-bold text-[#ebc766]">
+                    <span>✓ Step Verified Ethos</span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
         </div>

@@ -26,6 +26,22 @@ export default {
         display: ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
         tamil: ['"Mukta Malar"', '"Noto Sans Tamil"', 'system-ui', 'sans-serif'],
       },
+      boxShadow: {
+        '2xs': '0 1px 2px 0 rgba(23, 45, 37, 0.04)',
+        'xs': '0 1px 3px 0 rgba(23, 45, 37, 0.08)',
+      },
+      backdropBlur: {
+        'xs': '2px',
+      },
+      animation: {
+        'fadeIn': 'fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'scale(0.97)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
+        }
+      },
       borderRadius: {
         '2xl': '1rem',
         '3xl': '1.5rem',

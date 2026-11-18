@@ -31,10 +31,10 @@ export default function BloodRequestModal({ isOpen, onClose, lang }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-xs animate-fadeIn">
-      <div className="relative w-full max-w-lg bg-white rounded-[28px] shadow-2xl border border-[#cdd5c9] overflow-hidden">
+      <div className="relative w-full max-w-lg bg-white rounded-[28px] shadow-2xl border border-[#cdd5c9] overflow-hidden max-h-[92vh] flex flex-col">
         
         {/* Modal Header */}
-        <div className="bg-[#172d25] text-white p-7 relative">
+        <div className="bg-[#172d25] text-white p-6 sm:p-7 relative shrink-0">
           <button 
             onClick={onClose}
             className="absolute top-5 right-5 text-white/70 hover:text-white p-1 rounded-full hover:bg-white/10 cursor-pointer transition-colors"
@@ -78,7 +78,7 @@ export default function BloodRequestModal({ isOpen, onClose, lang }) {
         </div>
 
         {/* Modal Body */}
-        <div className="p-7">
+        <div className="p-6 sm:p-7 overflow-y-auto">
           {submitted ? (
             <div className="py-8 text-center space-y-4">
               <div className="w-16 h-16 rounded-full bg-emerald-100 text-[#173f32] flex items-center justify-center mx-auto">

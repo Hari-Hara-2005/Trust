@@ -10,7 +10,7 @@ export default function FAQSection({ lang, onOpenVolunteerModal, onOpenSupportMo
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-white relative overflow-hidden border-t border-[#cdd5c9]/60">
+    <section id="faq" className="py-20 sm:py-28 bg-white relative overflow-hidden border-t border-[#cdd5c9]/60 scroll-mt-28">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         {/* Careunity Header with AOS */}

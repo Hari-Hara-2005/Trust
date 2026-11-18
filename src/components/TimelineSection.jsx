@@ -4,7 +4,7 @@ import { trustTimeline } from '../data/trustData';
 
 export default function TimelineSection({ lang }) {
   return (
-    <section id="journey" className="py-20 sm:py-28 bg-[#f1f4ee] relative overflow-hidden border-t border-[#cdd5c9]/60">
+    <section id="journey" className="py-20 sm:py-28 bg-[#f1f4ee] relative overflow-hidden border-t border-[#cdd5c9]/60 scroll-mt-28">
       
       {/* Decorative ambient background */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-[#ebc766]/15 rounded-full blur-3xl pointer-events-none"></div>

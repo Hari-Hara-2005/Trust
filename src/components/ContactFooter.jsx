@@ -41,7 +41,7 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
   };
 
   return (
-    <footer id="contact" className="bg-[#172d25] text-white pt-20 pb-12 border-t border-[#173f32] relative overflow-hidden">
+    <footer id="contact" className="bg-[#172d25] text-white pt-20 pb-12 border-t border-[#173f32] relative overflow-hidden scroll-mt-28">
       
       {/* Decorative ambient spots */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#ebc766]/5 rounded-full blur-3xl pointer-events-none"></div>

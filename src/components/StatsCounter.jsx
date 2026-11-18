@@ -34,7 +34,7 @@ export default function StatsCounter({ lang, onSelectWing }) {
   };
 
   return (
-    <section id="impact" className="py-20 sm:py-28 bg-[#f1f4ee] relative border-b border-[#cdd5c9]/60">
+    <section id="impact" className="py-20 sm:py-28 bg-[#f1f4ee] relative border-b border-[#cdd5c9]/60 scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Careunity Section Header */}

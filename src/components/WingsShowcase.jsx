@@ -55,7 +55,7 @@ export default function WingsShowcase({
   };
 
   return (
-    <section id="wings" className="py-20 sm:py-28 bg-[#f1f4ee] relative overflow-hidden border-b border-[#cdd5c9]/60">
+    <section id="wings" className="py-20 sm:py-28 bg-[#f1f4ee] relative overflow-hidden border-b border-[#cdd5c9]/60 scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Careunity Section Header */}
@@ -140,13 +140,13 @@ export default function WingsShowcase({
                   <h3 className="text-2xl sm:text-3xl font-extrabold text-[#172d25] font-display">
                     {currentWing.name} <span className="text-[#173f32] tamil-title text-xl sm:text-2xl">({currentWing.nameTamil})</span>
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#526158] italic font-medium">
+                  <p className="text-xs sm:text-sm text-[#526158] italic font-medium mt-1.5">
                     "{lang === 'en' ? currentWing.motto : currentWing.mottoTamil}"
                   </p>
                 </div>
               </div>
 
-              <p className="text-sm sm:text-base text-[#526158] leading-relaxed pt-2">
+              <p className="text-sm sm:text-base text-[#526158] leading-[1.75] pt-2">
                 {lang === 'en' ? currentWing.description : currentWing.descriptionTamil}
               </p>
 
@@ -197,17 +197,17 @@ export default function WingsShowcase({
                 {currentWing.initiatives.map((init, i) => (
                   <div 
                     key={i}
-                    className="p-4 rounded-2xl bg-[#f1f4ee] border border-[#cdd5c9] hover:border-[#172d25] transition-all space-y-1 group"
+                    className="p-4 rounded-2xl bg-[#f1f4ee] border border-[#cdd5c9] hover:border-[#172d25] transition-all space-y-1.5 group"
                   >
                     <div className="flex items-center justify-between">
-                      <h5 className="font-extrabold text-sm text-[#172d25] group-hover:text-[#173f32] transition-colors">
+                      <h5 className="font-extrabold text-sm text-[#172d25] group-hover:text-[#173f32] transition-colors leading-snug">
                         {init.title}
                       </h5>
-                      <span className="text-[10px] font-bold text-[#172d25] bg-white border border-[#cdd5c9] px-2 py-0.5 rounded-full">
+                      <span className="text-[10px] font-bold text-[#172d25] bg-white border border-[#cdd5c9] px-2 py-0.5 rounded-full shrink-0">
                         {init.highlight}
                       </span>
                     </div>
-                    <p className="text-xs text-[#526158] leading-relaxed">
+                    <p className="text-xs sm:text-[13px] text-[#526158] leading-relaxed">
                       {init.desc}
                     </p>
                   </div>
