@@ -79,7 +79,7 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
           <div className="lg:col-span-6 space-y-5 sm:space-y-6" data-aos="fade-right">
             
             <div className="flex items-center gap-3 sm:gap-4">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white p-1 shadow-lg shrink-0">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white p-1.5 shadow-lg shrink-0">
                 <img 
                   src="/sevai-logo.png" 
                   alt="Sevai Kalanjiyam Logo" 

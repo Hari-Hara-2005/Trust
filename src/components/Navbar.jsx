@@ -125,19 +125,19 @@ export default function Navbar({
         <header className={`transition-all duration-300 ${
           isScrolled 
             ? 'bg-[#f1f4ee]/95 backdrop-blur-md shadow-md border-b border-[#cdd5c9] py-2 sm:py-2.5' 
-            : 'bg-[#f1f4ee] py-2 sm:py-3 border-b border-[#cdd5c9]/80 shadow-2xs'
+            : 'bg-[#f1f4ee] py-2 sm:py-2.5 border-b border-[#cdd5c9]/80 shadow-2xs'
         }`}>
-          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-1.5 sm:gap-4">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
             
             {/* Logo & Brand Identity (Optimized for zero-wrapping & crisp display) */}
-            <a href="#" className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0">
+            <a href="#" className="flex items-center gap-2.5 sm:gap-3.5 group shrink-0 min-w-0">
               
-              {/* Perfectly Proportioned Logo Circle */}
-              <div className="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white p-0.5 border-2 border-[#173f32] shadow-xs group-hover:scale-105 group-hover:border-[#ebc766] transition-all flex items-center justify-center shrink-0 ring-2 ring-[#cdd5c9]/60 overflow-hidden">
+              {/* Perfectly Proportioned, High-Clarity Logo Emblem */}
+              <div className="w-11 h-11 sm:w-13 sm:h-13 md:w-15 md:h-15 rounded-full bg-white p-1 border border-[#cdd5c9] shadow-sm group-hover:scale-105 group-hover:border-[#173f32] transition-all flex items-center justify-center shrink-0">
                 <img 
                   src="/sevai-logo.png" 
                   alt="Sevai Kalanjiyam Crest Logo" 
-                  className="w-full h-full object-cover scale-110 rounded-full transform group-hover:rotate-2 transition-transform duration-300"
+                  className="w-full h-full object-contain rounded-full transition-transform duration-300"
                 />
               </div>
               
@@ -209,8 +209,8 @@ export default function Navbar({
           <div className="w-4/5 max-w-sm bg-[#f1f4ee] h-full shadow-2xl flex flex-col p-6 overflow-y-auto border-l border-[#cdd5c9]">
             <div className="flex items-center justify-between pb-4 border-b border-[#cdd5c9]">
               <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-full bg-white p-0.5 border-2 border-[#173f32] shadow-xs flex items-center justify-center overflow-hidden shrink-0">
-                  <img src="/sevai-logo.png" alt="Logo" className="w-full h-full object-cover scale-110 rounded-full" />
+                <div className="w-12 h-12 rounded-full bg-white p-1 border border-[#cdd5c9] shadow-xs flex items-center justify-center shrink-0">
+                  <img src="/sevai-logo.png" alt="Logo" className="w-full h-full object-contain rounded-full" />
                 </div>
                 <div>
                   <h3 className="font-extrabold text-sm text-[#172d25] font-display">SEVAI KALANJIYAM</h3>

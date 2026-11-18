@@ -169,7 +169,7 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
               <img 
                 src="/sevai-logo.png" 
                 alt="Sevai Logo" 
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white p-0.5 border-2 border-[#ebc766]/60 shadow-xs object-contain shrink-0" 
+                className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white p-1 border-2 border-[#ebc766] shadow-sm object-contain shrink-0" 
               />
             </div>
           </div>

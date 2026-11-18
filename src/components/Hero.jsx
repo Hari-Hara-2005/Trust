@@ -307,13 +307,13 @@ export default function Hero({
                   <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-[#ebc766]/30 via-[#173f32]/20 to-[#ebc766]/30 blur-xl animate-pulse-glow pointer-events-none"></div>
 
                   {/* Circular Crest Badge */}
-                  <div className="w-20 h-20 sm:w-28 sm:h-28 rounded-full p-1 sm:p-1.5 bg-[#f1f4ee] border-2 border-[#173f32]/30 shadow-lg group-hover:scale-108 transition-all flex items-center justify-center relative overflow-hidden ring-4 ring-white">
+                  <div className="w-24 h-24 sm:w-32 sm:h-32 rounded-full p-2 bg-white border border-[#cdd5c9] shadow-xl group-hover:scale-105 transition-all flex items-center justify-center relative overflow-hidden ring-4 ring-white">
                     {/* Light Beam Shimmer */}
                     <div className="absolute inset-0 w-1/2 h-full bg-gradient-to-r from-transparent via-white/50 to-transparent skew-x-[-25deg] animate-shimmer pointer-events-none z-10"></div>
                     <img 
                       src="/sevai-logo.png" 
                       alt="Sevai Emblem" 
-                      className="w-full h-full object-cover scale-110 rounded-full"
+                      className="w-full h-full object-contain rounded-full"
                     />
                   </div>
                   
