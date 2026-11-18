@@ -69,7 +69,7 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
             <div className="pt-2">
               <button
                 onClick={onOpenVolunteerModal}
-                className="btn-care-primary group text-xs sm:text-sm py-3 px-6 cursor-pointer shadow-xs inline-flex"
+                className="btn-care-primary group text-xs sm:text-sm py-3 px-6 cursor-pointer shadow-xs inline-flex w-full sm:w-auto justify-center"
               >
                 <Users className="w-4 h-4 text-[#ebc766]" />
                 <span>{lang === 'en' ? 'Meet the Youth Volunteers' : 'தன்னார்வக் குழுவில் இணைய'}</span>
@@ -82,7 +82,7 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
 
           {/* Right: Why We Stand Apart Card */}
           <div className="lg:col-span-6" data-aos="fade-left">
-            <div className="h-full bg-white rounded-[28px] p-6 sm:p-7 border border-[#cdd5c9] space-y-4 shadow-xs flex flex-col justify-between">
+            <div className="h-full bg-white rounded-[24px] sm:rounded-[28px] p-5 sm:p-7 border border-[#cdd5c9] space-y-4 shadow-xs flex flex-col justify-between">
               <h4 className="font-extrabold text-sm sm:text-base text-[#172d25] flex items-center gap-2.5 font-display pb-2 border-b border-[#cdd5c9]/50">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#173f32] shrink-0"></span>
                 <span>{lang === 'en' ? 'Why We Stand Apart from Conventional NGOs:' : 'நாங்கள் எவ்வாறு தனித்து நிற்கிறோம்:'}</span>
@@ -145,13 +145,13 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
         {/* Row 2: The 4 Pillars of Sevai (Full Width Horizontal Showcase — No Overhang!) */}
         <div 
           data-aos="fade-up"
-          className="bg-[#172d25] text-white rounded-[32px] p-6 sm:p-8 lg:p-9 border border-[#234539] shadow-md relative overflow-hidden"
+          className="bg-[#172d25] text-white rounded-[28px] sm:rounded-[32px] p-5 sm:p-8 lg:p-9 border border-[#234539] shadow-md relative overflow-hidden"
         >
           {/* Subtle ambient light glow */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-[#ebc766]/5 rounded-full blur-3xl pointer-events-none"></div>
 
           {/* Banner Header */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-white/10 gap-4 mb-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-5 sm:pb-6 border-b border-white/10 gap-4 mb-6">
             <div className="space-y-1">
               <span className="text-xs font-bold uppercase tracking-wider text-[#ebc766] block font-display">
                 / ETHICAL FOUNDATIONS /
@@ -161,31 +161,31 @@ export default function AboutSection({ lang, onOpenVolunteerModal }) {
               </h4>
             </div>
 
-            <div className="flex items-center gap-4 shrink-0">
-              <div className="text-right hidden sm:block">
+            <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-4 shrink-0">
+              <div className="text-left sm:text-right">
                 <span className="text-xs text-[#ebc766] font-bold block">100% Volunteer Model</span>
                 <span className="text-[11px] text-white/60">Active Since 2010 • Chennai</span>
               </div>
               <img 
                 src="/sevai-logo.png" 
                 alt="Sevai Logo" 
-                className="w-12 h-12 rounded-full bg-white p-0.5 border-2 border-[#ebc766]/60 shadow-xs object-contain shrink-0" 
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white p-0.5 border-2 border-[#ebc766]/60 shadow-xs object-contain shrink-0" 
               />
             </div>
           </div>
 
           {/* 4 Pillars Grid: 4 Clean Columns Across Screen */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
             {trustInfo.philosophy.pillars.map((pillar, idx) => {
               const PillarIcon = iconMap[pillar.icon] || HeartHandshake;
               return (
                 <div 
                   key={idx} 
-                  className="flex flex-col justify-between p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#ebc766]/40 transition-all group shadow-2xs"
+                  className="flex flex-col justify-between p-4 sm:p-5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#ebc766]/40 transition-all group shadow-2xs"
                 >
                   <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-xl bg-[#ebc766]/20 text-[#ebc766] flex items-center justify-center shrink-0 group-hover:bg-[#ebc766] group-hover:text-[#172d25] transition-colors">
-                      <PillarIcon className="w-5 h-5" />
+                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#ebc766]/20 text-[#ebc766] flex items-center justify-center shrink-0 group-hover:bg-[#ebc766] group-hover:text-[#172d25] transition-colors">
+                      <PillarIcon className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
                     
                     <div className="space-y-1.5">

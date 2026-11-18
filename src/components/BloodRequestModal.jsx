@@ -34,33 +34,33 @@ export default function BloodRequestModal({ isOpen, onClose, lang }) {
       <div className="relative w-full max-w-lg bg-white rounded-[28px] shadow-2xl border border-[#cdd5c9] overflow-hidden max-h-[92vh] flex flex-col">
         
         {/* Modal Header */}
-        <div className="bg-[#172d25] text-white p-6 sm:p-7 relative shrink-0">
+        <div className="bg-[#172d25] text-white p-5 sm:p-7 relative shrink-0">
           <button 
             onClick={onClose}
-            className="absolute top-5 right-5 text-white/70 hover:text-white p-1 rounded-full hover:bg-white/10 cursor-pointer transition-colors"
+            className="absolute top-4 sm:top-5 right-4 sm:right-5 text-white/70 hover:text-white p-1 rounded-full hover:bg-white/10 cursor-pointer transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
           
-          <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-2xl bg-[#ebc766] text-[#172d25] flex items-center justify-center shrink-0">
-              <Droplet className="w-6 h-6" />
+          <div className="flex items-center gap-3 sm:gap-3.5">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#ebc766] text-[#172d25] flex items-center justify-center shrink-0">
+              <Droplet className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#ebc766]">
+              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#ebc766]">
                 / MARUTHUVAM KALANJIYAM • 24/7 HELPLINE /
               </span>
-              <h3 className="text-xl sm:text-2xl font-extrabold font-display text-white mt-0.5">
+              <h3 className="text-lg sm:text-2xl font-extrabold font-display text-white mt-0.5 leading-snug">
                 {lang === 'en' ? 'Emergency Blood Support' : 'அவசர குருதிக்கொடை உதவி'}
               </h3>
             </div>
           </div>
 
           {/* Toggle between Request & Register */}
-          <div className="flex items-center gap-2 mt-5 bg-white/10 p-1.5 rounded-full border border-white/15">
+          <div className="flex items-center gap-2 mt-4 sm:mt-5 bg-white/10 p-1.5 rounded-full border border-white/15">
             <button
               onClick={() => { setTab('request'); setSubmitted(false); }}
-              className={`flex-1 py-2 text-xs font-extrabold rounded-full transition-all cursor-pointer font-display ${
+              className={`flex-1 py-1.5 sm:py-2 text-[11px] sm:text-xs font-extrabold rounded-full transition-all cursor-pointer font-display ${
                 tab === 'request' ? 'bg-[#ebc766] text-[#172d25] shadow-xs' : 'text-white/80 hover:text-white'
               }`}
             >
@@ -68,7 +68,7 @@ export default function BloodRequestModal({ isOpen, onClose, lang }) {
             </button>
             <button
               onClick={() => { setTab('register'); setSubmitted(false); }}
-              className={`flex-1 py-2 text-xs font-extrabold rounded-full transition-all cursor-pointer font-display ${
+              className={`flex-1 py-1.5 sm:py-2 text-[11px] sm:text-xs font-extrabold rounded-full transition-all cursor-pointer font-display ${
                 tab === 'register' ? 'bg-[#ebc766] text-[#172d25] shadow-xs' : 'text-white/80 hover:text-white'
               }`}
             >
@@ -78,21 +78,21 @@ export default function BloodRequestModal({ isOpen, onClose, lang }) {
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 sm:p-7 overflow-y-auto">
+        <div className="p-5 sm:p-7 overflow-y-auto">
           {submitted ? (
-            <div className="py-8 text-center space-y-4">
-              <div className="w-16 h-16 rounded-full bg-emerald-100 text-[#173f32] flex items-center justify-center mx-auto">
-                <CheckCircle className="w-8 h-8" />
+            <div className="py-6 sm:py-8 text-center space-y-3.5 sm:space-y-4">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-100 text-[#173f32] flex items-center justify-center mx-auto">
+                <CheckCircle className="w-7 h-7 sm:w-8 sm:h-8" />
               </div>
-              <h4 className="text-2xl font-extrabold text-[#172d25] font-display">
+              <h4 className="text-xl sm:text-2xl font-extrabold text-[#172d25] font-display">
                 {tab === 'request' ? 'Emergency Blood Request Broadcasted!' : 'Registered to Youth Donor Network!'}
               </h4>
-              <p className="text-sm text-[#526158] max-w-sm mx-auto leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#526158] max-w-sm mx-auto leading-relaxed">
                 {tab === 'request'
                   ? 'Our Chennai volunteer coordinators have alerted registered matching donors across nearby areas. A coordinator will call you immediately.'
                   : 'Thank you for stepping forward! When a matching patient in Chennai government hospitals requires your blood group, we will alert you via WhatsApp/Call.'}
               </p>
-              <div className="p-4 bg-[#f1f4ee] rounded-2xl border border-[#cdd5c9] text-xs sm:text-sm text-[#172d25] font-bold">
+              <div className="p-3.5 sm:p-4 bg-[#f1f4ee] rounded-2xl border border-[#cdd5c9] text-xs sm:text-sm text-[#172d25] font-bold">
                 Direct Emergency Contact: +91 94441 23456 (24/7 Volunteers)
               </div>
               <button
@@ -103,8 +103,8 @@ export default function BloodRequestModal({ isOpen, onClose, lang }) {
               </button>
             </div>
           ) : tab === 'request' ? (
-            <form onSubmit={handleSubmit} className="space-y-4 text-left">
-              <div className="grid grid-cols-2 gap-3.5">
+            <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4 text-left">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                 <div>
                   <label className="block text-xs font-bold text-[#172d25] mb-1">
                     Patient Name *
@@ -149,7 +149,7 @@ export default function BloodRequestModal({ isOpen, onClose, lang }) {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                 <div>
                   <label className="block text-xs font-bold text-[#172d25] mb-1">
                     Units Required
@@ -187,12 +187,12 @@ export default function BloodRequestModal({ isOpen, onClose, lang }) {
               </button>
             </form>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4 text-left">
+            <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4 text-left">
               <div className="p-3 bg-[#f1f4ee] border border-[#cdd5c9] rounded-2xl text-xs text-[#526158]">
                 Join 600+ youth blood donors across Chennai ready to respond during critical hospital emergencies.
               </div>
 
-              <div className="grid grid-cols-2 gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                 <div>
                   <label className="block text-xs font-bold text-[#172d25] mb-1">Your Name *</label>
                   <input
@@ -219,7 +219,7 @@ export default function BloodRequestModal({ isOpen, onClose, lang }) {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                 <div>
                   <label className="block text-xs font-bold text-[#172d25] mb-1">Phone (WhatsApp) *</label>
                   <input

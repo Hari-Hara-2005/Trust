@@ -63,28 +63,28 @@ export default function SupportModal({ isOpen, onClose, lang }) {
       <div className="relative w-full max-w-xl bg-white rounded-[28px] shadow-2xl border border-[#cdd5c9] overflow-hidden max-h-[92vh] flex flex-col">
         
         {/* Header (Careunity Timber Green) */}
-        <div className="bg-[#172d25] text-white p-6 sm:p-7 relative shrink-0">
+        <div className="bg-[#172d25] text-white p-5 sm:p-7 relative shrink-0">
           <button 
             onClick={onClose}
-            className="absolute top-5 right-5 text-white/70 hover:text-white p-1 rounded-full hover:bg-white/10 cursor-pointer transition-colors"
+            className="absolute top-4 sm:top-5 right-4 sm:right-5 text-white/70 hover:text-white p-1 rounded-full hover:bg-white/10 cursor-pointer transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
           
-          <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-2xl bg-[#ebc766] text-[#172d25] flex items-center justify-center shrink-0">
-              <Heart className="w-6 h-6 fill-[#172d25]" />
+          <div className="flex items-center gap-3 sm:gap-3.5">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#ebc766] text-[#172d25] flex items-center justify-center shrink-0">
+              <Heart className="w-5 h-5 sm:w-6 sm:h-6 fill-[#172d25]" />
             </div>
             <div>
               <div className="flex items-center gap-2 mb-0.5">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-[#ebc766]">
+                <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-[#ebc766]">
                   / 100% DIRECT TO CAUSE /
                 </span>
-                <span className="text-[10px] bg-[#173f32] border border-[#ebc766]/30 text-[#ebc766] font-bold px-2 py-0.5 rounded-full">
+                <span className="text-[9px] sm:text-[10px] bg-[#173f32] border border-[#ebc766]/30 text-[#ebc766] font-bold px-2 py-0.5 rounded-full">
                   Zero Overhead
                 </span>
               </div>
-              <h3 className="text-xl sm:text-2xl font-extrabold font-display text-white">
+              <h3 className="text-lg sm:text-2xl font-extrabold font-display text-white leading-snug">
                 {lang === 'en' ? 'Support Sevai Kalanjiyam' : 'சேவை களஞ்சியத்திற்கு ஆதரவளிக்க'}
               </h3>
             </div>
@@ -92,13 +92,13 @@ export default function SupportModal({ isOpen, onClose, lang }) {
         </div>
 
         {/* Modal Body */}
-        <div className="p-6 sm:p-7 overflow-y-auto">
+        <div className="p-5 sm:p-7 overflow-y-auto">
           {step === 'select' ? (
-            <div className="space-y-5">
+            <div className="space-y-4 sm:space-y-5">
               
-              <div className="p-3.5 bg-[#f1f4ee] rounded-2xl border border-[#cdd5c9] text-xs text-[#526158] flex items-start gap-2.5">
+              <div className="p-3 sm:p-3.5 bg-[#f1f4ee] rounded-2xl border border-[#cdd5c9] text-xs text-[#526158] flex items-start gap-2.5">
                 <ShieldCheck className="w-4 h-4 text-[#173f32] shrink-0 mt-0.5" />
-                <span>
+                <span className="leading-relaxed">
                   <strong className="text-[#172d25]">Our Zero Overhead Pledge:</strong> Not a single rupee is diverted to administrative salaries or office rent. 100% of your contribution directly funds grassroots kits, meals, and saplings.
                 </span>
               </div>
@@ -108,7 +108,7 @@ export default function SupportModal({ isOpen, onClose, lang }) {
                 <label className="block text-xs font-bold text-[#172d25] uppercase tracking-wider mb-2 font-display">
                   Select a Direct Impact Initiative:
                 </label>
-                <div className="space-y-2.5">
+                <div className="space-y-2 sm:space-y-2.5">
                   {packages.map((pkg) => {
                     const isSelected = selectedPackage === pkg.id && !customAmount;
                     return (
@@ -118,25 +118,25 @@ export default function SupportModal({ isOpen, onClose, lang }) {
                           setSelectedPackage(pkg.id);
                           setCustomAmount('');
                         }}
-                        className={`p-3.5 sm:p-4 rounded-[20px] border transition-all cursor-pointer flex items-start justify-between gap-3 ${
+                        className={`p-3 sm:p-4 rounded-[18px] sm:rounded-[20px] border transition-all cursor-pointer flex items-start justify-between gap-2.5 sm:gap-3 ${
                           isSelected
                             ? 'bg-[#f1f4ee] border-[#172d25] shadow-sm'
                             : 'bg-white border-[#cdd5c9] hover:border-[#172d25]/50'
                         }`}
                       >
                         <div className="space-y-1">
-                          <div className="flex items-center gap-2">
+                          <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
                             <span className="text-xs sm:text-sm font-extrabold text-[#172d25] font-display">{pkg.title}</span>
-                            <span className="text-[10px] text-[#526158] bg-white border border-[#cdd5c9] px-2 py-0.5 rounded-full font-semibold">
+                            <span className="text-[9px] sm:text-[10px] text-[#526158] bg-white border border-[#cdd5c9] px-2 py-0.5 rounded-full font-semibold">
                               {pkg.wing}
                             </span>
                           </div>
-                          <p className="text-xs text-[#526158] leading-relaxed">
+                          <p className="text-[11px] sm:text-xs text-[#526158] leading-relaxed">
                             {pkg.desc}
                           </p>
                         </div>
                         <div className="text-right shrink-0">
-                          <span className="text-base sm:text-lg font-black text-[#172d25] font-display">
+                          <span className="text-sm sm:text-lg font-black text-[#172d25] font-display">
                             ₹{pkg.amount}
                           </span>
                         </div>
@@ -175,45 +175,45 @@ export default function SupportModal({ isOpen, onClose, lang }) {
               </button>
             </div>
           ) : (
-            <div className="space-y-5">
-              <div className="p-4 bg-[#f1f4ee] rounded-2xl border border-[#cdd5c9] text-xs sm:text-sm text-[#172d25] flex items-center justify-between">
+            <div className="space-y-4 sm:space-y-5">
+              <div className="p-3.5 sm:p-4 bg-[#f1f4ee] rounded-2xl border border-[#cdd5c9] text-xs sm:text-sm text-[#172d25] flex items-center justify-between gap-2">
                 <div>
-                  <span className="font-extrabold text-sm sm:text-base text-[#172d25] font-display">Contribution Amount: ₹{finalAmount}</span>
-                  <p className="text-xs text-[#526158] mt-0.5">
+                  <span className="font-extrabold text-xs sm:text-base text-[#172d25] font-display">Contribution: ₹{finalAmount}</span>
+                  <p className="text-[11px] sm:text-xs text-[#526158] mt-0.5">
                     {customAmount ? 'Custom Contribution' : currentPkg ? currentPkg.title : 'General Trust Fund'}
                   </p>
                 </div>
                 <button
                   onClick={() => setStep('select')}
-                  className="text-xs text-[#173f32] font-extrabold underline cursor-pointer hover:text-[#172d25]"
+                  className="text-xs text-[#173f32] font-extrabold underline cursor-pointer hover:text-[#172d25] shrink-0"
                 >
                   Change
                 </button>
               </div>
 
-              {/* Bank Details Card */}
-              <div className="p-4 rounded-[22px] bg-[#f1f4ee] border border-[#cdd5c9] space-y-3">
-                <h4 className="text-xs font-extrabold text-[#172d25] uppercase tracking-wider font-display">
+              {/* Bank Details Card (Single Column on Mobile for 100% Legibility) */}
+              <div className="p-3.5 sm:p-4 rounded-[20px] sm:rounded-[22px] bg-[#f1f4ee] border border-[#cdd5c9] space-y-2.5 sm:space-y-3">
+                <h4 className="text-[11px] sm:text-xs font-extrabold text-[#172d25] uppercase tracking-wider font-display">
                   Direct Trust Bank Account Transfer (NEFT / RTGS / IMPS)
                 </h4>
 
                 <div className="space-y-2 text-xs">
-                  <div className="flex items-center justify-between p-3 bg-white rounded-xl border border-[#cdd5c9]">
-                    <div>
+                  <div className="flex items-center justify-between p-2.5 sm:p-3 bg-white rounded-xl border border-[#cdd5c9]">
+                    <div className="min-w-0 pr-2">
                       <span className="text-[10px] text-[#526158] block">Account Name</span>
-                      <strong className="text-[#172d25] text-xs sm:text-sm font-bold">SEVAI KALANJIYAM SOCIAL WELFARE TRUST</strong>
+                      <strong className="text-[#172d25] text-xs sm:text-sm font-bold truncate block">SEVAI KALANJIYAM SOCIAL WELFARE TRUST</strong>
                     </div>
                     <button
                       onClick={() => copyToClipboard('SEVAI KALANJIYAM SOCIAL WELFARE TRUST', 'accName')}
-                      className="text-slate-500 hover:text-slate-800 p-1 cursor-pointer"
+                      className="text-slate-500 hover:text-slate-800 p-1 cursor-pointer shrink-0"
                       title="Copy"
                     >
                       {copiedField === 'accName' ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4" />}
                     </button>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="flex items-center justify-between p-3 bg-white rounded-xl border border-[#cdd5c9]">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    <div className="flex items-center justify-between p-2.5 sm:p-3 bg-white rounded-xl border border-[#cdd5c9]">
                       <div>
                         <span className="text-[10px] text-[#526158] block">Account Number</span>
                         <strong className="text-[#172d25] text-xs sm:text-sm font-bold">3894 0001 0023 4567</strong>
@@ -226,7 +226,7 @@ export default function SupportModal({ isOpen, onClose, lang }) {
                       </button>
                     </div>
 
-                    <div className="flex items-center justify-between p-3 bg-white rounded-xl border border-[#cdd5c9]">
+                    <div className="flex items-center justify-between p-2.5 sm:p-3 bg-white rounded-xl border border-[#cdd5c9]">
                       <div>
                         <span className="text-[10px] text-[#526158] block">IFSC Code</span>
                         <strong className="text-[#172d25] text-xs sm:text-sm font-bold">SBIN0001234</strong>
@@ -240,7 +240,7 @@ export default function SupportModal({ isOpen, onClose, lang }) {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between p-3 bg-white rounded-xl border border-[#cdd5c9]">
+                  <div className="flex items-center justify-between p-2.5 sm:p-3 bg-white rounded-xl border border-[#cdd5c9]">
                     <div>
                       <span className="text-[10px] text-[#526158] block">UPI ID / VPA</span>
                       <strong className="text-[#172d25] text-xs sm:text-sm font-bold">sevaikalanjiyam@sbi</strong>
@@ -260,7 +260,7 @@ export default function SupportModal({ isOpen, onClose, lang }) {
                 <label className="block text-xs font-bold text-[#172d25]">
                   Notify Volunteers for Formal 80G Receipt & Ground Photo Log:
                 </label>
-                <div className="grid grid-cols-2 gap-2.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   <input
                     type="text"
                     placeholder="Your Name"
@@ -278,10 +278,10 @@ export default function SupportModal({ isOpen, onClose, lang }) {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between pt-1">
+              <div className="flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-2.5 pt-1">
                 <button
                   onClick={() => setStep('select')}
-                  className="px-4 py-2 text-xs sm:text-sm font-bold text-[#526158] hover:text-[#172d25] cursor-pointer"
+                  className="px-4 py-2.5 text-xs sm:text-sm font-bold text-[#526158] hover:text-[#172d25] cursor-pointer text-center"
                 >
                   ← Back
                 </button>
@@ -290,7 +290,7 @@ export default function SupportModal({ isOpen, onClose, lang }) {
                     alert('Thank you for supporting Sevai Kalanjiyam! A volunteer will verify the transaction and send the receipt and beneficiary impact updates to your WhatsApp.');
                     onClose();
                   }}
-                  className="px-6 py-3 bg-[#172d25] hover:bg-[#173f32] text-white font-extrabold text-xs sm:text-sm rounded-full shadow-md cursor-pointer transition-colors"
+                  className="px-6 py-3 bg-[#172d25] hover:bg-[#173f32] text-white font-extrabold text-xs sm:text-sm rounded-full shadow-md cursor-pointer transition-colors text-center"
                 >
                   I Have Completed the Transfer
                 </button>

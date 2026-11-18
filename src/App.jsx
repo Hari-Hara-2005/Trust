@@ -64,7 +64,7 @@ export default function App() {
       />
 
       {/* Main Content with calibrated clearance for fixed navbar */}
-      <main className="flex-grow pt-[104px] sm:pt-[112px]">
+      <main className="flex-grow pt-[86px] sm:pt-[96px] md:pt-[106px]">
         {/* Hero with Trust Logo & Core Ethos */}
         <Hero
           lang={lang}

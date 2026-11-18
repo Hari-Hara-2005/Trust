@@ -31,13 +31,13 @@ export default function FAQSection({ lang, onOpenVolunteerModal, onOpenSupportMo
         </div>
 
         {/* Accordion List with Careunity Styling */}
-        <div className="space-y-4" data-aos="fade-up" data-aos-delay="100">
+        <div className="space-y-3.5 sm:space-y-4" data-aos="fade-up" data-aos-delay="100">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={index}
-                className={`border rounded-[22px] transition-all duration-200 overflow-hidden ${
+                className={`border rounded-[18px] sm:rounded-[22px] transition-all duration-200 overflow-hidden ${
                   isOpen 
                     ? 'border-[#172d25] shadow-sm bg-white' 
                     : 'border-[#cdd5c9] hover:border-[#172d25]/60 bg-white'
@@ -45,20 +45,20 @@ export default function FAQSection({ lang, onOpenVolunteerModal, onOpenSupportMo
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex items-center justify-between p-5 sm:p-6 text-left font-extrabold text-sm sm:text-base text-[#172d25] font-display hover:text-[#173f32] transition-colors cursor-pointer"
+                  className="w-full flex items-center justify-between p-4 sm:p-5 md:p-6 text-left font-extrabold text-sm sm:text-base text-[#172d25] font-display hover:text-[#173f32] transition-colors cursor-pointer gap-2"
                 >
-                  <span className="pr-4 leading-snug">
+                  <span className="pr-2 leading-snug">
                     {lang === 'en' ? faq.q : faq.qTamil}
                   </span>
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-200 ${
+                  <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-200 ${
                     isOpen ? 'bg-[#172d25] text-white rotate-180' : 'bg-[#f1f4ee] text-[#172d25]'
                   }`}>
-                    <ChevronDown className="w-4 h-4" />
+                    <ChevronDown className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 text-xs sm:text-sm text-[#526158] leading-relaxed border-t border-[#cdd5c9]/40 pt-4 bg-[#f1f4ee]/40">
+                  <div className="px-4 sm:px-6 pb-5 sm:pb-6 text-xs sm:text-sm text-[#526158] leading-relaxed border-t border-[#cdd5c9]/40 pt-3.5 sm:pt-4 bg-[#f1f4ee]/40">
                     <p>{faq.a}</p>
                   </div>
                 )}
@@ -71,14 +71,14 @@ export default function FAQSection({ lang, onOpenVolunteerModal, onOpenSupportMo
         <div 
           data-aos="fade-up"
           data-aos-delay="200"
-          className="mt-14 p-8 rounded-[30px] bg-[#f1f4ee] border border-[#cdd5c9] text-center space-y-4"
+          className="mt-10 sm:mt-14 p-5 sm:p-8 rounded-[24px] sm:rounded-[30px] bg-[#f1f4ee] border border-[#cdd5c9] text-center space-y-3.5 sm:space-y-4"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#cdd5c9] text-xs font-bold text-[#172d25]">
             <MessageSquare className="w-3.5 h-3.5 text-[#173f32]" />
             <span>{lang === 'en' ? 'Direct Youth Coordinator Access' : 'நேரடி தன்னார்வலர் உதவி'}</span>
           </div>
 
-          <h4 className="font-extrabold text-lg sm:text-xl text-[#172d25] font-display">
+          <h4 className="font-extrabold text-base sm:text-lg md:text-xl text-[#172d25] font-display">
             {lang === 'en' ? 'Have a different question or want to collaborate?' : 'வேறு கேள்விகள் உள்ளதா அல்லது இணைந்து பணியாற்ற விரும்புகிறீர்களா?'}
           </h4>
 
@@ -88,10 +88,10 @@ export default function FAQSection({ lang, onOpenVolunteerModal, onOpenSupportMo
               : 'எங்கள் தன்னார்வலர் குழுவை நேரடியாக வாட்ஸ்அப் அல்லது தொலைபேசியில் தொடர்பு கொள்ளலாம்.'}
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 pt-2">
             <button
               onClick={onOpenVolunteerModal}
-              className="btn-care-primary cursor-pointer text-xs sm:text-sm py-3 px-6"
+              className="btn-care-primary cursor-pointer text-xs sm:text-sm py-3 px-6 w-full sm:w-auto justify-center"
             >
               <span>{lang === 'en' ? 'Talk to a Volunteer' : 'தன்னார்வலரிடம் பேச'}</span>
               <div className="btn-care-icon">
@@ -100,7 +100,7 @@ export default function FAQSection({ lang, onOpenVolunteerModal, onOpenSupportMo
             </button>
             <a
               href="#contact"
-              className="btn-care-secondary text-xs sm:text-sm py-3 px-6"
+              className="btn-care-secondary text-xs sm:text-sm py-3 px-6 w-full sm:w-auto justify-center text-center"
             >
               <span>{lang === 'en' ? 'View Contact Info' : 'தொடர்பு முகவரி'}</span>
             </a>

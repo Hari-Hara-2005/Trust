@@ -50,19 +50,19 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         
         {/* Top Pre-Footer Banner in Careunity Style */}
-        <div className="mb-16 pb-12 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-6" data-aos="fade-up">
+        <div className="mb-12 sm:mb-16 pb-8 sm:pb-12 border-b border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-5 sm:gap-6" data-aos="fade-up">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[#ebc766] text-xs font-bold uppercase tracking-wider mb-3">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[#ebc766] text-xs font-bold uppercase tracking-wider mb-2.5 sm:mb-3">
               <span>/ {lang === 'en' ? 'STAY CLOSE TO THE WORK' : 'மக்கள் பணியில் இணைந்திருங்கள்'} /</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-display tracking-tight text-white">
+            <h2 className="text-xl sm:text-3xl lg:text-4xl font-extrabold font-display tracking-tight text-white leading-snug">
               {lang === 'en' ? 'Direct grassroots help. Zero bureaucracy.' : 'நேரடி மக்கள் சேவை. இடைத்தரகர்கள் இல்லாத இயக்கம்.'}
             </h2>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 w-full sm:w-auto">
             <button
               onClick={() => onOpenSupportModal()}
-              className="btn-care-gold text-xs sm:text-sm py-3 px-6 cursor-pointer"
+              className="btn-care-gold text-xs sm:text-sm py-3 px-6 cursor-pointer w-full sm:w-auto justify-center"
             >
               <span>{lang === 'en' ? 'Support a Cause' : 'பங்களிக்க'}</span>
               <div className="btn-care-icon">
@@ -73,13 +73,13 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
         </div>
 
         {/* Contact Form & Trust Info Grid */}
-        <div className="grid lg:grid-cols-12 gap-12 pb-14 border-b border-white/10">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 pb-10 sm:pb-14 border-b border-white/10">
           
           {/* Left Column: Trust Info & Hubs */}
-          <div className="lg:col-span-6 space-y-6" data-aos="fade-right">
+          <div className="lg:col-span-6 space-y-5 sm:space-y-6" data-aos="fade-right">
             
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full bg-white p-1 shadow-lg shrink-0">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white p-1 shadow-lg shrink-0">
                 <img 
                   src="/sevai-logo.png" 
                   alt="Sevai Kalanjiyam Logo" 
@@ -87,13 +87,13 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
                 />
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl font-black tracking-tight text-white font-display">
+                <h3 className="text-lg sm:text-2xl font-black tracking-tight text-white font-display">
                   SEVAI KALANJIYAM
                 </h3>
-                <p className="text-sm font-bold text-[#ebc766] font-tamil">
+                <p className="text-xs sm:text-sm font-bold text-[#ebc766] font-tamil">
                   சேவை களஞ்சியம் சமூக நல அறக்கட்டளை
                 </p>
-                <p className="text-xs text-slate-300 font-medium">
+                <p className="text-[11px] sm:text-xs text-slate-300 font-medium">
                   Registered Social Welfare Trust • Founded 2010 • Chennai
                 </p>
               </div>
@@ -107,7 +107,7 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
 
             {/* Direct Contact Cards in Careunity Style */}
             <div className="space-y-3 text-xs sm:text-sm">
-              <div className="flex items-start gap-3.5 p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
+              <div className="flex items-start gap-3 p-3.5 sm:p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
                 <div className="w-8 h-8 rounded-full bg-[#173f32] flex items-center justify-center shrink-0 mt-0.5 text-[#ebc766]">
                   <MapPin className="w-4 h-4" />
                 </div>
@@ -121,7 +121,7 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors">
                   <div className="w-8 h-8 rounded-full bg-emerald-900/60 flex items-center justify-center shrink-0 text-emerald-300">
                     <Phone className="w-4 h-4" />
@@ -155,19 +155,19 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
             </div>
 
             {/* Tamil Quote badge */}
-            <div className="p-4 rounded-2xl bg-[#ebc766]/10 border border-[#ebc766]/25 text-[#ebc766] text-xs sm:text-sm italic font-bold font-tamil leading-relaxed">
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-[#ebc766]/10 border border-[#ebc766]/25 text-[#ebc766] text-xs sm:text-sm italic font-bold font-tamil leading-relaxed">
               "வாடிய பயிரைக் கண்டபோதெல்லாம் வாடினேன் • பசிப்பிணி தீர்த்தல் தலையாய கடமை"
             </div>
 
           </div>
 
           {/* Right Column: Interactive Message Box (Careunity Timber Green Box) */}
-          <div className="lg:col-span-6 bg-white/5 backdrop-blur-md p-6 sm:p-8 rounded-[28px] border border-white/10" data-aos="fade-left">
-            <h4 className="text-lg sm:text-xl font-extrabold text-white mb-1.5 flex items-center gap-2 font-display">
+          <div className="lg:col-span-6 bg-white/5 backdrop-blur-md p-5 sm:p-8 rounded-[24px] sm:rounded-[28px] border border-white/10" data-aos="fade-left">
+            <h4 className="text-base sm:text-xl font-extrabold text-white mb-1.5 flex items-center gap-2 font-display">
               <Send className="w-4 h-4 text-[#ebc766]" />
               <span>{lang === 'en' ? 'Send a Message to Youth Coordinators' : 'எங்களை தொடர்பு கொள்ள'}</span>
             </h4>
-            <p className="text-xs text-slate-300 mb-5 leading-relaxed">
+            <p className="text-xs text-slate-300 mb-4 sm:mb-5 leading-relaxed">
               {lang === 'en'
                 ? 'Looking to conduct an education kit drive, tree plantation, or sponsor food in your area?'
                 : 'உங்கள் பகுதியில் மரக்கன்று நடவோ, கல்வி உபகரணங்கள் வழங்கவோ விரும்பினால் தகவல் அனுப்பவும்.'}
@@ -182,8 +182,8 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-3.5">
+              <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                   <div>
                     <label className="block text-xs font-bold text-slate-300 mb-1">Your Name *</label>
                     <input 
@@ -261,13 +261,13 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
 
         </div>
 
-        {/* 5 Wings Quick Access in Careunity Pill Style */}
-        <div className="py-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 border-b border-white/10 text-xs sm:text-sm font-semibold">
+        {/* 5 Wings Quick Access in Careunity Pill Style (Adaptive 2-col + Span on mobile) */}
+        <div className="py-6 sm:py-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-3 border-b border-white/10 text-xs sm:text-sm font-semibold">
           <div 
             onClick={() => onSelectWing('kalvi')}
             className="flex items-center gap-2 p-2.5 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-[#ebc766] hover:border-[#ebc766]/50 cursor-pointer transition-colors"
           >
-            <GraduationCap className="w-4 h-4 text-[#ebc766]" />
+            <GraduationCap className="w-4 h-4 text-[#ebc766] shrink-0" />
             <span className="truncate">Kalvi (கல்வி)</span>
           </div>
 
@@ -275,7 +275,7 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
             onClick={() => onSelectWing('pasumai')}
             className="flex items-center gap-2 p-2.5 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-emerald-300 hover:border-emerald-300/50 cursor-pointer transition-colors"
           >
-            <Trees className="w-4 h-4 text-emerald-400" />
+            <Trees className="w-4 h-4 text-emerald-400 shrink-0" />
             <span className="truncate">Pasumai (பசுமை)</span>
           </div>
 
@@ -283,7 +283,7 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
             onClick={() => onSelectWing('unavu')}
             className="flex items-center gap-2 p-2.5 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-amber-300 hover:border-amber-300/50 cursor-pointer transition-colors"
           >
-            <UtensilsCrossed className="w-4 h-4 text-amber-400" />
+            <UtensilsCrossed className="w-4 h-4 text-amber-400 shrink-0" />
             <span className="truncate">Unavu (உணவு)</span>
           </div>
 
@@ -291,15 +291,15 @@ export default function ContactFooter({ lang, onSelectWing, onOpenSupportModal }
             onClick={() => onSelectWing('tugil')}
             className="flex items-center gap-2 p-2.5 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-pink-300 hover:border-pink-300/50 cursor-pointer transition-colors"
           >
-            <Shirt className="w-4 h-4 text-pink-400" />
+            <Shirt className="w-4 h-4 text-pink-400 shrink-0" />
             <span className="truncate">Tugil (துகில்)</span>
           </div>
 
           <div 
             onClick={() => onSelectWing('maruthuvam')}
-            className="flex items-center gap-2 p-2.5 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-teal-300 hover:border-teal-300/50 cursor-pointer transition-colors"
+            className="col-span-2 sm:col-span-1 flex items-center justify-center sm:justify-start gap-2 p-2.5 rounded-full bg-white/5 border border-white/10 text-slate-300 hover:text-teal-300 hover:border-teal-300/50 cursor-pointer transition-colors"
           >
-            <Stethoscope className="w-4 h-4 text-teal-400" />
+            <Stethoscope className="w-4 h-4 text-teal-400 shrink-0" />
             <span className="truncate">Maruthuvam (மருத்துவம்)</span>
           </div>
         </div>

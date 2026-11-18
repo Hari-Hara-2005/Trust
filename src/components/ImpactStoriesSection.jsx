@@ -51,15 +51,15 @@ export default function ImpactStoriesSection({ lang, onSelectWing, onOpenSupport
           </p>
         </div>
 
-        {/* Filter Pills with Careunity Aesthetic */}
+        {/* Filter Pills with Careunity Aesthetic (Horizontal Swipe on Mobile) */}
         <div 
           data-aos="fade-up"
           data-aos-delay="100"
-          className="flex flex-wrap items-center gap-2 mb-10"
+          className="flex items-center overflow-x-auto pb-3 mb-8 sm:mb-10 gap-2 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0 flex-nowrap sm:flex-wrap"
         >
           <button
             onClick={() => setSelectedFilter('all')}
-            className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer border ${
+            className={`px-3.5 sm:px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer border whitespace-nowrap shrink-0 ${
               selectedFilter === 'all'
                 ? 'bg-[#172d25] text-white border-[#172d25]'
                 : 'bg-white text-[#172d25] border-[#cdd5c9] hover:bg-[#cdd5c9]/40'
@@ -81,7 +81,7 @@ export default function ImpactStoriesSection({ lang, onSelectWing, onOpenSupport
               <button
                 key={id}
                 onClick={() => setSelectedFilter(id)}
-                className={`px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer border ${
+                className={`px-3.5 sm:px-4 py-2 rounded-full text-xs font-bold transition-all cursor-pointer border whitespace-nowrap shrink-0 ${
                   isSelected
                     ? 'bg-[#172d25] text-white border-[#172d25]'
                     : 'bg-white text-[#172d25] border-[#cdd5c9] hover:bg-[#cdd5c9]/40'
@@ -94,7 +94,7 @@ export default function ImpactStoriesSection({ lang, onSelectWing, onOpenSupport
         </div>
 
         {/* Stories Grid in Careunity Card Style */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {filteredStories.map((story, idx) => {
             const Icon = wingIcons[story.wingId] || Sparkles;
             return (
@@ -102,7 +102,7 @@ export default function ImpactStoriesSection({ lang, onSelectWing, onOpenSupport
                 key={story.id}
                 data-aos="fade-up"
                 data-aos-delay={idx * 100}
-                className="care-card p-7 flex flex-col justify-between group"
+                className="care-card p-5 sm:p-7 flex flex-col justify-between group"
               >
                 <div className="space-y-3.5">
                   {/* Top Tag & Metric Badge */}

@@ -75,11 +75,11 @@ export default function WingsShowcase({
           </p>
         </div>
 
-        {/* Tab Filter Selector in Careunity Pill Style */}
+        {/* Tab Filter Selector in Careunity Pill Style (Horizontal Scroll with Bleed on Mobile) */}
         <div 
           data-aos="fade-up"
           data-aos-delay="100"
-          className="flex items-center justify-start overflow-x-auto pb-4 mb-10 gap-2 sm:gap-2.5 scrollbar-none"
+          className="flex items-center justify-start overflow-x-auto pb-3 mb-8 sm:mb-10 gap-2 sm:gap-2.5 scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0"
         >
           {wingsData.map((wing) => {
             const Icon = iconMap[wing.id];
@@ -89,13 +89,13 @@ export default function WingsShowcase({
               <button
                 key={wing.id}
                 onClick={() => setActiveWingId(wing.id)}
-                className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-200 cursor-pointer border ${
+                className={`flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap transition-all duration-200 cursor-pointer border ${
                   isActive
                     ? 'bg-[#172d25] text-white border-[#172d25] shadow-xs'
                     : 'bg-white text-[#172d25] hover:bg-[#cdd5c9]/40 border-[#cdd5c9]'
                 }`}
               >
-                <Icon className={`w-4 h-4 ${isActive ? 'text-[#ebc766]' : 'text-[#526158]'}`} />
+                <Icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isActive ? 'text-[#ebc766]' : 'text-[#526158]'}`} />
                 <span>{wing.name}</span>
                 <span className={`text-[10px] ${isActive ? 'text-[#ebc766]' : 'text-[#526158]'}`}>
                   ({wing.nameTamil})
@@ -109,15 +109,15 @@ export default function WingsShowcase({
         <div 
           data-aos="fade-up"
           data-aos-delay="200"
-          className="bg-white rounded-[32px] border border-[#cdd5c9] p-6 sm:p-10 shadow-sm transition-all mb-12"
+          className="bg-white rounded-[28px] sm:rounded-[32px] border border-[#cdd5c9] p-5 sm:p-8 md:p-10 shadow-sm transition-all mb-12"
         >
           {/* Card Top Pill & Tag */}
-          <div className="flex flex-wrap items-center justify-between gap-3 pb-6 border-b border-[#cdd5c9]/60">
-            <div className="flex items-center gap-2.5">
-              <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#f1f4ee] border border-[#cdd5c9] text-[#172d25] uppercase tracking-wider">
+          <div className="flex flex-wrap items-center justify-between gap-2.5 pb-5 sm:pb-6 border-b border-[#cdd5c9]/60">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-[#f1f4ee] border border-[#cdd5c9] text-[#172d25] uppercase tracking-wider">
                 {wingCategories[currentWing.id]}
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-bold bg-[#173f32] text-[#ebc766]">
+              <span className="px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-[#173f32] text-[#ebc766]">
                 {currentWing.statBadge}
               </span>
             </div>
@@ -129,43 +129,43 @@ export default function WingsShowcase({
           </div>
 
           {/* Wing Main Content Grid */}
-          <div className="grid lg:grid-cols-12 gap-8 my-8 items-start">
+          <div className="grid lg:grid-cols-12 gap-6 lg:gap-8 my-6 sm:my-8 items-start">
             
             <div className="lg:col-span-7 space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-2xl bg-[#f1f4ee] border border-[#cdd5c9] flex items-center justify-center shrink-0">
-                  <CurrentIcon className="w-6 h-6 text-[#172d25]" />
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-[#f1f4ee] border border-[#cdd5c9] flex items-center justify-center shrink-0">
+                  <CurrentIcon className="w-5 h-5 sm:w-6 sm:h-6 text-[#172d25]" />
                 </div>
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-[#172d25] font-display">
-                    {currentWing.name} <span className="text-[#173f32] tamil-title text-xl sm:text-2xl">({currentWing.nameTamil})</span>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-[#172d25] font-display">
+                    {currentWing.name} <span className="text-[#173f32] tamil-title text-lg sm:text-2xl">({currentWing.nameTamil})</span>
                   </h3>
-                  <p className="text-xs sm:text-sm text-[#526158] italic font-medium mt-1.5">
+                  <p className="text-xs sm:text-sm text-[#526158] italic font-medium mt-1">
                     "{lang === 'en' ? currentWing.motto : currentWing.mottoTamil}"
                   </p>
                 </div>
               </div>
 
-              <p className="text-sm sm:text-base text-[#526158] leading-[1.75] pt-2">
+              <p className="text-xs sm:text-sm md:text-base text-[#526158] leading-[1.75] pt-1">
                 {lang === 'en' ? currentWing.description : currentWing.descriptionTamil}
               </p>
 
               {/* Progress bar in Careunity style */}
-              <div className="p-4 bg-[#f1f4ee] rounded-2xl border border-[#cdd5c9] space-y-2 mt-4">
+              <div className="p-3.5 sm:p-4 bg-[#f1f4ee] rounded-2xl border border-[#cdd5c9] space-y-2 mt-4">
                 <div className="flex justify-between text-xs font-bold text-[#172d25]">
                   <span>Field Milestone: {currentWing.statBadge}</span>
-                  <span className="text-[#173f32]">Direct Grassroots Impact</span>
+                  <span className="text-[#173f32] hidden xs:inline">Direct Grassroots Impact</span>
                 </div>
                 <div className="w-full bg-white h-3 rounded-full overflow-hidden border border-[#cdd5c9]">
                   <div className="bg-gradient-to-r from-[#173f32] to-[#ebc766] h-full w-[85%] rounded-full"></div>
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 pt-3">
+              {/* Action Buttons with Thumb-Friendly Responsive Layout */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-3">
                 <button
                   onClick={() => handleWingAction(currentWing.id)}
-                  className="btn-care-primary group"
+                  className="btn-care-primary group w-full sm:w-auto justify-center"
                 >
                   <Heart className="w-4 h-4 text-[#ebc766] fill-[#ebc766]" />
                   <span>
@@ -180,7 +180,7 @@ export default function WingsShowcase({
 
                 <button
                   onClick={onOpenVolunteerModal}
-                  className="btn-care-secondary"
+                  className="btn-care-secondary w-full sm:w-auto justify-center"
                 >
                   <span>{lang === 'en' ? 'Volunteer with this Wing' : 'இணைந்து பணியாற்ற'}</span>
                 </button>
@@ -197,10 +197,10 @@ export default function WingsShowcase({
                 {currentWing.initiatives.map((init, i) => (
                   <div 
                     key={i}
-                    className="p-4 rounded-2xl bg-[#f1f4ee] border border-[#cdd5c9] hover:border-[#172d25] transition-all space-y-1.5 group"
+                    className="p-3.5 sm:p-4 rounded-2xl bg-[#f1f4ee] border border-[#cdd5c9] hover:border-[#172d25] transition-all space-y-1.5 group"
                   >
-                    <div className="flex items-center justify-between">
-                      <h5 className="font-extrabold text-sm text-[#172d25] group-hover:text-[#173f32] transition-colors leading-snug">
+                    <div className="flex items-center justify-between gap-2">
+                      <h5 className="font-extrabold text-xs sm:text-sm text-[#172d25] group-hover:text-[#173f32] transition-colors leading-snug">
                         {init.title}
                       </h5>
                       <span className="text-[10px] font-bold text-[#172d25] bg-white border border-[#cdd5c9] px-2 py-0.5 rounded-full shrink-0">
@@ -218,8 +218,8 @@ export default function WingsShowcase({
           </div>
 
           {/* Accomplishments Footer */}
-          <div className="pt-6 border-t border-[#cdd5c9]/60 flex flex-wrap items-center justify-between gap-4 text-xs text-[#526158]">
-            <div className="flex flex-wrap gap-x-6 gap-y-2 font-medium">
+          <div className="pt-5 sm:pt-6 border-t border-[#cdd5c9]/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-[#526158]">
+            <div className="flex flex-wrap gap-x-5 gap-y-2 font-medium">
               {currentWing.impactHighlights.map((hi, idx) => (
                 <span key={idx} className="flex items-center gap-1.5">
                   <Check className="w-3.5 h-3.5 text-[#173f32] stroke-[3]" />

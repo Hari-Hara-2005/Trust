@@ -34,13 +34,13 @@ export default function TimelineSection({ lang }) {
         </div>
 
         {/* Timeline Flow */}
-        <div className="relative border-l-2 border-[#cdd5c9] ml-4 sm:ml-32 md:ml-40 space-y-12">
+        <div className="relative border-l-2 border-[#cdd5c9] ml-3 sm:ml-32 md:ml-40 space-y-8 sm:space-y-12">
           {trustTimeline.map((item, index) => (
             <div 
               key={index} 
               data-aos="fade-up"
               data-aos-delay={index * 90}
-              className="relative pl-6 sm:pl-10 group"
+              className="relative pl-5 sm:pl-10 group"
             >
               
               {/* Year Badge on the left for medium+ screens */}
@@ -51,26 +51,26 @@ export default function TimelineSection({ lang }) {
               </div>
 
               {/* Dot on the timeline line */}
-              <div className="absolute -left-[9px] top-2.5 w-4 h-4 rounded-full bg-[#172d25] border-2 border-[#ebc766] shadow-xs group-hover:scale-125 group-hover:bg-[#173f32] transition-transform"></div>
+              <div className="absolute -left-[9px] top-4 sm:top-2.5 w-4 h-4 rounded-full bg-[#172d25] border-2 border-[#ebc766] shadow-xs group-hover:scale-125 group-hover:bg-[#173f32] transition-transform"></div>
 
               {/* Content Card (Careunity Style) */}
-              <div className="bg-white rounded-[24px] sm:rounded-[28px] p-6 sm:p-7 border border-[#cdd5c9] shadow-xs hover:shadow-md transition-all group-hover:border-[#172d25]">
+              <div className="bg-white rounded-[20px] sm:rounded-[28px] p-4 sm:p-6 md:p-7 border border-[#cdd5c9] shadow-xs hover:shadow-md transition-all group-hover:border-[#172d25]">
                 
-                <div className="flex items-center justify-between gap-3 mb-2">
-                  <span className="sm:hidden inline-block text-[11px] font-black text-[#172d25] bg-[#ebc766] px-3 py-0.5 rounded-full font-display">
+                <div className="flex items-center justify-between gap-2 mb-2">
+                  <span className="sm:hidden inline-block text-[11px] font-black text-[#172d25] bg-[#ebc766] px-2.5 py-0.5 rounded-full font-display">
                     {item.year}
                   </span>
-                  <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#526158]">
+                  <div className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-semibold text-[#526158]">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#173f32]" />
                     <span>Verified Milestone</span>
                   </div>
                 </div>
 
-                <h3 className="text-lg sm:text-xl font-extrabold text-[#172d25] font-display group-hover:text-[#173f32] transition-colors">
+                <h3 className="text-base sm:text-lg md:text-xl font-extrabold text-[#172d25] font-display group-hover:text-[#173f32] transition-colors leading-snug">
                   {item.title}
                 </h3>
 
-                <p className="mt-2.5 text-xs sm:text-sm text-[#526158] leading-relaxed">
+                <p className="mt-2 text-xs sm:text-sm text-[#526158] leading-relaxed">
                   {item.desc}
                 </p>
               </div>

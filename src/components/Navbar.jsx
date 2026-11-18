@@ -68,17 +68,17 @@ export default function Navbar({
       <div className="fixed top-0 left-0 right-0 z-50">
         
         {/* Top Utility Announcement Bar (Smoothly collapses on scroll to maximize reading area) */}
-        <div className={`bg-[#172d25] text-white px-4 sm:px-6 text-xs font-medium transition-all duration-300 overflow-hidden ${
+        <div className={`bg-[#172d25] text-white px-3 sm:px-6 text-xs font-medium transition-all duration-300 overflow-hidden ${
           isScrolled 
             ? 'max-h-0 py-0 opacity-0 border-none pointer-events-none' 
             : 'max-h-12 py-1.5 border-b border-[#234539] opacity-100 shadow-2xs'
         }`}>
-          <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+          <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
             
             {/* Left: Ticker label & Live field ticker */}
-            <div className="flex items-center gap-2.5 overflow-hidden">
-              <span className="text-[10px] sm:text-[11px] font-bold tracking-widest text-[#ebc766] uppercase font-display shrink-0 whitespace-nowrap">
-                / SEVAI KALANJIYAM • CHENNAI EST. 2010 /
+            <div className="flex items-center gap-2 sm:gap-2.5 overflow-hidden shrink min-w-0">
+              <span className="text-[10px] sm:text-[11px] font-bold tracking-wider sm:tracking-widest text-[#ebc766] uppercase font-display shrink-0 whitespace-nowrap">
+                <span className="hidden sm:inline">/ SEVAI KALANJIYAM • </span>CHENNAI EST. 2010<span className="hidden sm:inline"> /</span>
               </span>
               <span className="hidden lg:inline text-white/30">•</span>
               <div className="hidden lg:flex items-center gap-1.5 text-slate-300 text-xs truncate max-w-lg">
@@ -88,33 +88,33 @@ export default function Navbar({
             </div>
 
             {/* Right: Emergency Quick Actions & Language Toggle */}
-            <div className="flex items-center gap-3 shrink-0">
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0">
               <button 
                 onClick={onOpenFoodModal}
-                className="flex items-center gap-1.5 text-[#ebc766] hover:text-white transition-colors cursor-pointer text-xs font-semibold whitespace-nowrap"
+                className="hidden xs:flex items-center gap-1 sm:gap-1.5 text-[#ebc766] hover:text-white transition-colors cursor-pointer text-[11px] sm:text-xs font-semibold whitespace-nowrap"
               >
-                <Utensils className="w-3.5 h-3.5 shrink-0" />
-                <span>{lang === 'en' ? 'Surplus Food Rescue' : 'உணவு மீட்பு'}</span>
+                <Utensils className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+                <span>{lang === 'en' ? 'Food Rescue' : 'உணவு'}</span>
               </button>
 
-              <span className="text-white/20">|</span>
+              <span className="hidden xs:inline text-white/20">|</span>
 
               <button 
                 onClick={onOpenBloodModal}
-                className="flex items-center gap-1.5 text-rose-300 hover:text-white transition-colors cursor-pointer text-xs font-semibold whitespace-nowrap"
+                className="hidden md:flex items-center gap-1 sm:gap-1.5 text-rose-300 hover:text-white transition-colors cursor-pointer text-[11px] sm:text-xs font-semibold whitespace-nowrap"
               >
-                <Droplet className="w-3.5 h-3.5 text-rose-400 shrink-0" />
+                <Droplet className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-rose-400 shrink-0" />
                 <span>{lang === 'en' ? 'Blood Helpline' : 'குருதிக்கொடை'}</span>
               </button>
 
-              <span className="text-white/20">|</span>
+              <span className="hidden md:inline text-white/20">|</span>
 
               <button
                 onClick={() => setLang(lang === 'en' ? 'ta' : 'en')}
-                className="flex items-center gap-1 bg-white/10 hover:bg-white/20 px-2.5 py-0.5 rounded-full text-xs font-bold text-white transition-all cursor-pointer border border-white/15 whitespace-nowrap"
+                className="flex items-center gap-1 bg-white/10 hover:bg-white/20 px-2 sm:px-2.5 py-0.5 rounded-full text-[10px] sm:text-xs font-bold text-white transition-all cursor-pointer border border-white/15 whitespace-nowrap"
                 title="Switch Language (மொழி மாற்று)"
               >
-                <Globe className="w-3.5 h-3.5 text-[#ebc766] shrink-0" />
+                <Globe className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#ebc766] shrink-0" />
                 <span>{lang === 'en' ? 'தமிழ்' : 'English'}</span>
               </button>
             </div>
@@ -125,15 +125,15 @@ export default function Navbar({
         <header className={`transition-all duration-300 ${
           isScrolled 
             ? 'bg-[#f1f4ee]/95 backdrop-blur-md shadow-md border-b border-[#cdd5c9] py-2 sm:py-2.5' 
-            : 'bg-[#f1f4ee] py-2.5 sm:py-3 border-b border-[#cdd5c9]/80 shadow-2xs'
+            : 'bg-[#f1f4ee] py-2 sm:py-3 border-b border-[#cdd5c9]/80 shadow-2xs'
         }`}>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-1.5 sm:gap-4">
             
             {/* Logo & Brand Identity (Optimized for zero-wrapping & crisp display) */}
-            <a href="#" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+            <a href="#" className="flex items-center gap-2 sm:gap-3 group shrink-0 min-w-0">
               
               {/* Perfectly Proportioned Logo Circle */}
-              <div className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white p-0.5 border-2 border-[#173f32] shadow-xs group-hover:scale-105 group-hover:border-[#ebc766] transition-all flex items-center justify-center shrink-0 ring-2 ring-[#cdd5c9]/60 overflow-hidden">
+              <div className="w-9 h-9 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full bg-white p-0.5 border-2 border-[#173f32] shadow-xs group-hover:scale-105 group-hover:border-[#ebc766] transition-all flex items-center justify-center shrink-0 ring-2 ring-[#cdd5c9]/60 overflow-hidden">
                 <img 
                   src="/sevai-logo.png" 
                   alt="Sevai Kalanjiyam Crest Logo" 
@@ -143,11 +143,11 @@ export default function Navbar({
               
               {/* Brand Typography (Ensures no awkward word wrapping & generous line spacing) */}
               <div className="flex flex-col justify-center shrink-0">
-                <span className="text-base sm:text-xl font-black tracking-tight text-[#172d25] font-display leading-snug group-hover:text-[#173f32] transition-colors whitespace-nowrap">
+                <span className="text-sm sm:text-lg md:text-xl font-black tracking-tight text-[#172d25] font-display leading-tight group-hover:text-[#173f32] transition-colors whitespace-nowrap">
                   Sevai Kalanjiyam
                 </span>
-                <span className="text-[11px] sm:text-xs font-bold text-[#173f32] tamil-title leading-normal mt-1 sm:mt-1.5 whitespace-nowrap">
-                  சேவை களஞ்சியம் <span className="text-[#526158] font-medium text-[10px] sm:text-[11px] hidden sm:inline">• Social Welfare Trust</span>
+                <span className="text-[10px] sm:text-xs font-bold text-[#173f32] tamil-title leading-tight mt-0.5 sm:mt-1 whitespace-nowrap">
+                  சேவை களஞ்சியம் <span className="text-[#526158] font-medium text-[9px] sm:text-[11px] hidden sm:inline">• Social Welfare Trust</span>
                 </span>
               </div>
             </a>
@@ -166,7 +166,7 @@ export default function Navbar({
             </nav>
 
             {/* Action CTAs in Careunity Pill Style */}
-            <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+            <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
               {/* Volunteer CTA (Desktop full view) */}
               <button
                 onClick={onOpenVolunteerModal}
@@ -179,7 +179,7 @@ export default function Navbar({
               {/* Careunity Signature Primary Donate Button */}
               <button
                 onClick={onOpenSupportModal}
-                className="hidden sm:inline-flex btn-care-primary group text-xs xl:text-sm py-1.5 xl:py-2 px-4 xl:px-5 cursor-pointer whitespace-nowrap shadow-xs"
+                className="hidden sm:inline-flex btn-care-primary group text-xs xl:text-sm py-1.5 xl:py-2 px-3.5 xl:px-5 cursor-pointer whitespace-nowrap shadow-xs"
               >
                 <span>{lang === 'en' ? 'Donate Now' : 'ஆதரவளிக்க'}</span>
                 <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-[#ebc766] group-hover:text-[#172d25] transition-colors shrink-0">
@@ -190,7 +190,7 @@ export default function Navbar({
               {/* Mobile Donate Button (<640px) */}
               <button
                 onClick={onOpenSupportModal}
-                className="sm:hidden px-3.5 py-1.5 text-xs font-bold text-white bg-[#172d25] rounded-full shadow-xs cursor-pointer font-display whitespace-nowrap"
+                className="sm:hidden px-3 py-1.5 text-[11px] font-bold text-white bg-[#172d25] rounded-full shadow-xs cursor-pointer font-display whitespace-nowrap"
               >
                 {lang === 'en' ? 'Donate' : 'ஆதரவு'}
               </button>
@@ -198,7 +198,7 @@ export default function Navbar({
               {/* Mobile Menu Hamburger Toggle */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 text-[#172d25] hover:bg-white rounded-full transition-colors cursor-pointer border border-[#cdd5c9] shrink-0"
+                className="lg:hidden p-1.5 sm:p-2 text-[#172d25] hover:bg-white rounded-full transition-colors cursor-pointer border border-[#cdd5c9] shrink-0"
                 aria-label="Open mobile menu"
               >
                 {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

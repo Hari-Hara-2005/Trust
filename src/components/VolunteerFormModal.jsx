@@ -41,28 +41,28 @@ export default function VolunteerFormModal({ isOpen, onClose, lang }) {
       <div className="relative w-full max-w-xl bg-white rounded-[28px] shadow-2xl border border-[#cdd5c9] overflow-hidden max-h-[90vh] flex flex-col">
         
         {/* Modal Header (Careunity Timber Green) */}
-        <div className="bg-[#172d25] text-white p-7 relative shrink-0">
+        <div className="bg-[#172d25] text-white p-5 sm:p-7 relative shrink-0">
           <button 
             onClick={onClose}
-            className="absolute top-5 right-5 text-white/70 hover:text-white p-1 rounded-full hover:bg-white/10 cursor-pointer transition-colors"
+            className="absolute top-4 sm:top-5 right-4 sm:right-5 text-white/70 hover:text-white p-1 rounded-full hover:bg-white/10 cursor-pointer transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
           
-          <div className="flex items-center gap-3.5">
-            <div className="w-12 h-12 rounded-2xl bg-[#ebc766] text-[#172d25] flex items-center justify-center shrink-0">
-              <Users className="w-6 h-6" />
+          <div className="flex items-center gap-3 sm:gap-3.5">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-[#ebc766] text-[#172d25] flex items-center justify-center shrink-0">
+              <Users className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#ebc766]">
+              <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#ebc766]">
                 / 100% VOLUNTEER-LED COLLECTIVE /
               </span>
-              <h3 className="text-xl sm:text-2xl font-extrabold font-display text-white mt-0.5">
+              <h3 className="text-lg sm:text-2xl font-extrabold font-display text-white mt-0.5 leading-snug">
                 {lang === 'en' ? 'Join Sevai Kalanjiyam Youth Collective' : 'சேவை களஞ்சியத்தில் இணையுங்கள்'}
               </h3>
             </div>
           </div>
-          <p className="text-xs sm:text-sm text-slate-300 mt-2.5 leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-300 mt-2 sm:mt-2.5 leading-relaxed">
             {lang === 'en'
               ? 'No administrative salaries. No overhead bureaucracy. Just direct, hands-on community service with dignity.'
               : 'எந்தவித ஊதிய எதிர்பார்ப்பும் இன்றி, சக மனிதர்களின் சுயமரியாதையைக் காக்கும் தூய தன்னார்வப் பணி.'}
@@ -70,21 +70,21 @@ export default function VolunteerFormModal({ isOpen, onClose, lang }) {
         </div>
 
         {/* Modal Body */}
-        <div className="p-7 overflow-y-auto">
+        <div className="p-5 sm:p-7 overflow-y-auto">
           {submitted ? (
-            <div className="py-8 text-center space-y-4">
-              <div className="w-16 h-16 rounded-full bg-emerald-100 text-[#173f32] flex items-center justify-center mx-auto">
-                <CheckCircle className="w-8 h-8" />
+            <div className="py-6 sm:py-8 text-center space-y-3.5 sm:space-y-4">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-emerald-100 text-[#173f32] flex items-center justify-center mx-auto">
+                <CheckCircle className="w-7 h-7 sm:w-8 sm:h-8" />
               </div>
-              <h4 className="text-2xl font-extrabold text-[#172d25] font-display">
+              <h4 className="text-xl sm:text-2xl font-extrabold text-[#172d25] font-display">
                 {lang === 'en' ? 'Welcome to the Family of Volunteers!' : 'நல்வரவு! பதிவு வெற்றிகரமாக முடிந்தது!'}
               </h4>
-              <p className="text-sm text-[#526158] max-w-md mx-auto leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#526158] max-w-md mx-auto leading-relaxed">
                 {lang === 'en'
                   ? 'Thank you for stepping forward! A volunteer coordinator will add you to our orientation WhatsApp group and invite you to our upcoming weekend activity.'
                   : 'உங்களின் சமூக அக்கறைக்கு நன்றி! எங்களின் தன்னார்வலர் ஒருங்கிணைப்பாளர் உங்களை வாட்ஸ்அப் குழுவில் இணைத்து அடுத்த வார களப்பணிக்கு அழைப்பார்.'}
               </p>
-              <div className="p-4 bg-[#f1f4ee] text-[#172d25] rounded-2xl border border-[#cdd5c9] text-xs sm:text-sm font-bold">
+              <div className="p-3.5 sm:p-4 bg-[#f1f4ee] text-[#172d25] rounded-2xl border border-[#cdd5c9] text-xs sm:text-sm font-bold">
                 Upcoming activity: Saturday Evening Study Circle & Sunday Sapling Watering Drive.
               </div>
               <button
@@ -95,9 +95,9 @@ export default function VolunteerFormModal({ isOpen, onClose, lang }) {
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-4 text-left">
+            <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-4 text-left">
               
-              <div className="grid grid-cols-2 gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                 <div>
                   <label className="block text-xs font-bold text-[#172d25] mb-1">Your Full Name *</label>
                   <input
@@ -123,7 +123,7 @@ export default function VolunteerFormModal({ isOpen, onClose, lang }) {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                 <div>
                   <label className="block text-xs font-bold text-[#172d25] mb-1">Email Address</label>
                   <input
@@ -152,14 +152,14 @@ export default function VolunteerFormModal({ isOpen, onClose, lang }) {
                 <label className="block text-xs font-bold text-[#172d25] mb-2">
                   Which Wing(s) Would You Like to Contribute To? (Select all that apply)
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-2.5">
                   {wingsData.map((wing) => {
                     const isSelected = formData.selectedWings.includes(wing.id);
                     return (
                       <div
                         key={wing.id}
                         onClick={() => toggleWing(wing.id)}
-                        className={`flex items-center gap-2.5 p-3 rounded-xl border cursor-pointer transition-all text-xs sm:text-sm font-bold ${
+                        className={`flex items-center gap-2.5 p-2.5 sm:p-3 rounded-xl border cursor-pointer transition-all text-xs sm:text-sm font-bold ${
                           isSelected 
                             ? 'bg-[#172d25] border-[#172d25] text-white' 
                             : 'bg-white border-[#cdd5c9] text-[#172d25] hover:bg-[#f1f4ee]'
@@ -172,14 +172,14 @@ export default function VolunteerFormModal({ isOpen, onClose, lang }) {
                           className="rounded text-[#ebc766] focus:ring-0 w-4 h-4 cursor-pointer"
                         />
                         <span>{wing.name}</span>
-                        <span className={`text-xs ${isSelected ? 'text-[#ebc766]' : 'text-[#526158]'}`}>({wing.title})</span>
+                        <span className={`text-[11px] sm:text-xs ${isSelected ? 'text-[#ebc766]' : 'text-[#526158]'}`}>({wing.title})</span>
                       </div>
                     );
                   })}
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
                 <div>
                   <label className="block text-xs font-bold text-[#172d25] mb-1">Your Availability</label>
                   <select
@@ -226,7 +226,7 @@ export default function VolunteerFormModal({ isOpen, onClose, lang }) {
 
               <button
                 type="submit"
-                className="w-full py-3.5 bg-[#172d25] hover:bg-[#173f32] text-white font-extrabold text-sm rounded-full shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 font-display"
+                className="w-full py-3.5 bg-[#172d25] hover:bg-[#173f32] text-white font-extrabold text-xs sm:text-sm rounded-full shadow-md transition-all cursor-pointer flex items-center justify-center gap-2 font-display"
               >
                 <span>Submit Volunteer Registration</span>
                 <ArrowRight className="w-4 h-4 text-[#ebc766]" />
